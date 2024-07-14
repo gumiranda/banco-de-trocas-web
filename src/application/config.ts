@@ -1,5 +1,5 @@
 export const config = {
   isAdmin: false,
-  systemName: "belezix",
-  typeSystem: "beleza",
+  systemName: "banco de trocas",
+  typeSystem: "imóveis",
 };

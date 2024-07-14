@@ -43,7 +43,7 @@ export const AuthLayout = ({ children, ...rest }: any) => {
               </Text>
               <Box>
                 <Text fontWeight={"bold"} fontSize={"6xl"} color="white">
-                  {config.systemName}.
+                  {config.systemName.split(" ").join("")}.
                 </Text>
                 <Flex h={1} bgColor="tertiary.500" />
               </Box>
