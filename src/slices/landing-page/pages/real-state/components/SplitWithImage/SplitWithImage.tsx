@@ -74,7 +74,7 @@ export const SplitWithImage = () => {
   };
 
   return (
-    <Container maxW={"5xl"} py={6}>
+    <Container maxW={"5xl"} py={6} my={6}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Heading>Facilitando a compra e venda de imóveis</Heading>
@@ -105,7 +105,7 @@ export const SplitWithImage = () => {
               text={"Análise de mercado com as melhores opções"}
             />
           </Stack>
-          <Box as="form" onSubmit={handleSubmit(onSubmit)}>
+          {/* <Box as="form" onSubmit={handleSubmit(onSubmit)}>
             <FormControl isInvalid={errors.email as any}>
               <FormLabel>Email</FormLabel>
               <Input placeholder="Digite seu e-mail" {...register("email")} mt={2} />
@@ -114,7 +114,7 @@ export const SplitWithImage = () => {
             <Button colorScheme="teal" mt={2} type="submit" isLoading={isSubmitting}>
               Inscrever-se
             </Button>
-          </Box>
+          </Box> */}
         </Stack>
         <Flex>
           <Image

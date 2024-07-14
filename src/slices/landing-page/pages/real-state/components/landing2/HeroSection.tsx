@@ -36,8 +36,6 @@ export const HeroSection = () => (
       bg="gray.700"
       borderRadius="lg"
       boxShadow="lg"
-      animation={`${slideInLeft} 1s ease-out`}
-      transition="all 0.3s ease"
       backgroundImage={`url(${imageTest}), linear-gradient(to right, rgba(255, 136, 0, 0.5), rgba(255, 191, 0, 0.5))`}
       backgroundBlendMode="overlay"
     >

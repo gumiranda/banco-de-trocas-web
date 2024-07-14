@@ -184,7 +184,7 @@ export const About = () => {
   return (
     <Container maxW={"7xl"} p="12">
       <Heading as="h1" animation={`${fadeIn} 1s`}>
-        Compre ou Venda seu Apartamento no Guarujá, SP com Gilson Gonçalves de Aguiar!
+        Compre ou Venda seu imóvel com Gilson Gonçalves de Aguiar!
       </Heading>
       <Box
         marginTop={{ base: "1", sm: "5" }}
@@ -243,7 +243,7 @@ export const About = () => {
           <BlogTags tags={["Finanças", "Imóveis", "Oportunidade"]} />
           <Heading marginTop="1">
             <Text textDecoration="none" _hover={{ textDecoration: "none" }}>
-              Imóveis no Guarujá
+              Imóveis que anunciamos
             </Text>
           </Heading>
           <Text
@@ -252,14 +252,14 @@ export const About = () => {
             color={useColorModeValue("gray.100", "gray.200")}
             fontSize="lg"
           >
-            Você está pensando em vender ou comprar um apartamento no Guarujá, SP? Não
-            perca tempo! Ligue agora para (11) 99184-3119 e envie um oi com seu nome. Eu
-            sou Gilson Gonçalves de Aguiar, corretor de imóveis credenciado pelo Creci
-            36.924-F, e estou aqui para ajudar a tornar realidade o seu objetivo
-            imobiliário. A oferta do dia é um apartamento na praia de Enseada, av. Santa
-            Maria, 2 andar, prédio sem elevador, 2 dormitórios sendo 1 suite, 51,62 m2
-            úteis, 19,55 m2 estacionamento, condomínio R$532,17, documentação 100%, por
-            apenas R$250.000,00.
+            Você está pensando em vender ou comprar um imóvel? Não perca tempo! Ligue
+            agora para (11) 99184-3119 e envie um oi com seu nome. Eu sou Gilson Gonçalves
+            de Aguiar, corretor de imóveis credenciado pelo Creci 36.924-F, e estou aqui
+            para ajudar a tornar realidade o seu objetivo imobiliário. A oferta do dia é
+            um apartamento na praia de Enseada, av. Santa Maria, 2 andar, prédio sem
+            elevador, 2 dormitórios sendo 1 suite, 51,62 m2 úteis, 19,55 m2
+            estacionamento, condomínio R$532,17, documentação 100%, por apenas
+            R$250.000,00.
           </Text>
           <BlogAuthor name="Gilson Aguiar" date={new Date()} />
         </Box>
