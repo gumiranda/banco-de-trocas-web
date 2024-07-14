@@ -1,3 +1,5 @@
+import { Img } from "@/shared/ui";
+import { imageTest } from "@/slices/moving/pages/image";
 import {
   Flex,
   Container,
@@ -22,7 +24,7 @@ const animationProps = {
 export const PropertyList = ({
   properties,
 }: {
-  properties: Array<{ id: number; title: string; description: string }>;
+  properties: Array<{ id: number; title: string; description: string; images: string[] }>;
 }) => (
   <Container maxW="5xl" py={20}>
     <Heading
@@ -33,31 +35,32 @@ export const PropertyList = ({
       pb={2}
       {...animationProps}
     >
-      Imóveis Disponíveis
+      Oportunidade de imóvel
     </Heading>
-    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-      {properties.map((property) => (
-        <Flex
-          key={property.id}
-          p={5}
-          shadow="lg"
-          borderWidth="1px"
-          borderRadius="md"
-          bg="white"
-          transition="transform 0.2s, box-shadow 0.2s"
-          _hover={{ transform: "scale(1.05)", boxShadow: "xl" }}
-          animation={`${fadeIn} 0.5s ease-out`}
-        >
-          <Stack>
-            <Heading fontSize="xl" color="gray.800" letterSpacing="tight">
-              {property.title}
-            </Heading>
-            <Text mt={4} color="gray.800" lineHeight="tall">
-              {property.description}
-            </Text>
-          </Stack>
-        </Flex>
-      ))}
-    </SimpleGrid>
+    {properties.map((property) => (
+      <Flex
+        key={property.id}
+        p={5}
+        shadow="lg"
+        borderWidth="1px"
+        borderRadius="md"
+        bg="white"
+        transition="transform 0.2s, box-shadow 0.2s"
+        _hover={{ transform: "scale(1.05)", boxShadow: "xl" }}
+        animation={`${fadeIn} 0.5s ease-out`}
+      >
+        <Stack>
+          <Heading fontSize="xl" color="gray.800" letterSpacing="tight">
+            {property.title}
+          </Heading>
+          <Text mt={4} color="gray.800" lineHeight="tall">
+            {property.description}
+          </Text>
+          {property?.images?.map?.((image, ix) => (
+            <Img key={ix} src={image} alt="Imagem do Imóvel" borderRadius="md" mt={4} />
+          ))}
+        </Stack>
+      </Flex>
+    ))}
   </Container>
 );
