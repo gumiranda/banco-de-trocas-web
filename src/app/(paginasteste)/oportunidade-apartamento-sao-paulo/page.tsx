@@ -5,5 +5,5 @@ export const metadata: Metadata = {
   description: `Página inicial do site do corretor de imóveis Gilson Gonçalves de Aguiar. Anuncie seu imóvel com a ajuda de um profissional experiente.`,
 };
 export default async function Page() {
-  return <ImovelSantos slug="santos" />;
+  return <ImovelSantos slug="sp" />;
 }
