@@ -1,6 +1,8 @@
 "use client"; import { Box, GenericTable, Head, Pagination } from "@/shared/ui";
 import { Get{{pascalCase name}}sResponse } from "@/slices/appointments/entidades/{{camelCase name}}/{{camelCase name}}.api";
 import { use{{pascalCase name}}List } from "../{{camelCase name}}List.hook";
+import { useTranslation } from "react-i18next";
+
 type {{pascalCase name}}ListTablePageProps = {
   data: Get{{pascalCase name}}sResponse;
   page: number;
@@ -9,6 +11,8 @@ const Text = ({ id, ...data }: any) => {
   return <h1 data-testid={"h1TestId" + id}>{data[id]}</h1>;
 };
 export const {{pascalCase name}}ListTablePage = ({ page = 0, data }: {{pascalCase name}}ListTablePageProps) => {
+  const { t } = useTranslation(["PAGES"]);
+
   const {
     {{camelCase name}}s,
     set{{pascalCase name}}s,

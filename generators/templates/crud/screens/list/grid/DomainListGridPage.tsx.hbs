@@ -1,8 +1,13 @@
+"use client";
+
 import { InfiniteList, GenericGrid, Head } from "@/shared/ui";
 import { use{{pascalCase name}}InfiniteList } from "../{{camelCase name}}InfiniteList.hook";
 import { use{{pascalCase name}}Ui } from "@/slices/appointments/entidades/{{camelCase name}}/{{camelCase name}}.ui";
+import { useTranslation } from "react-i18next";
 
 export const {{pascalCase name}}GridPage = () => {
+  const { t } = useTranslation("PAGES");
+
   const {
     isFetching,
     error,

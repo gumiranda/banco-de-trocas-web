@@ -15,10 +15,24 @@ export const useGet{{pascalCase name}}s = (
     ...options,
   } as any);
 };
-export const useGetInfinite{{pascalCase name}}s = (options?: UseInfiniteQueryOptions) => {
-  return useInfiniteQuery(
-    ["{{camelCase name}}sInfinite"],
-    getInfinite{{pascalCase name}}s as any,
-    options as any
-  );
+export const useGet{{pascalCase name}} = (
+  page: number,
+  options?: UseQueryOptions,
+  ctx?: any
+): any => {
+  return useQuery({
+    queryKey: ["{{pascalCase name}}", page],
+    queryFn: () => get{{pascalCase name}}(page, ctx),
+    staleTime: 1000 * 5,
+    ...options,
+  } as any);
+}; 
+export const useGetInfinite{{pascalCase name}} = (
+  options: Omit<UseInfiniteQueryOptions, "queryKey">
+) => {
+  return useInfiniteQuery({
+    queryKey: ["{{pascalCase name}}Infinite"],
+    queryFn: ({ pageParam = 1 }: any) => getInfinite{{pascalCase name}}(pageParam),
+    ...options,
+  });
 };

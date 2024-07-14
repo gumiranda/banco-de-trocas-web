@@ -1,38 +1,38 @@
 "use client";
-import { Get{{pascalCase name}}sResponse } from "@/slices/appointments/entidades/{{camelcase name}}/{{camelcase name}}.api";
+import { GetImovelsResponse } from "@/slices/appointments/entidades/imovel/imovel.api";
 import { useState, useEffect } from "react";
 import { useUi } from "@/shared/libs";
 import { api, queryClientInstance } from "@/shared/api";
 import { useMutation } from "@tanstack/react-query";
-import { {{pascalCase name}}Props } from "@/slices/appointments/entidades/{{camelcase name}}";
+import { ImovelProps } from "@/slices/appointments/entidades/imovel";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
-type {{pascalCase name}}ListHook = {
-  initialData: Get{{pascalCase name}}sResponse;
+type ImovelListHook = {
+  initialData: GetImovelsResponse;
   page: number;
 };
-export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) => {
+export const useImovelList = (data: ImovelListHook) => {
   const { t } = useTranslation(["PAGES"]);
 
   const router = useRouter();
   const { showModal } = useUi();
   const [page, setPage] = useState(data.page);
-  const [{{camelcase name}}s, set{{pascalCase name}}s] = useState(data?.initialData?.{{camelcase name}}s ?? []);
-  const handlePrefetch{{pascalCase name}} = async ({ _id: {{camelcase name}}Id }: any) => {
+  const [imovels, setImovels] = useState(data?.initialData?.imovels ?? []);
+  const handlePrefetchImovel = async ({ _id: imovelId }: any) => {
     // await queryClientInstance.prefetchQuery(
-    //   ["{{camelcase name}}", {{camelcase name}}Id],
+    //   ["imovel", imovelId],
     //   async () => {
     //     const { data = null } =
-    //       (await api.get(`/{{camelcase name}}/load?_id=${{{camelcase name}}Id}`)) || {};
+    //       (await api.get(`/imovel/load?_id=${imovelId}`)) || {};
     //     return data;
     //   },
     //   { staleTime: 1000 * 60 * 10 },
     // );
   };
-  const delete{{pascalCase name}} = useMutation({
+  const deleteImovel = useMutation({
     onSuccess: () => {
-      queryClientInstance.invalidateQueries(["{{camelcase name}}s", data.page] as any);
-      queryClientInstance.refetchQueries(["{{camelcase name}}s", data.page] as any);
+      queryClientInstance.invalidateQueries(["imovels", data.page] as any);
+      queryClientInstance.refetchQueries(["imovels", data.page] as any);
       router.refresh();
     },
     onError: () => {
@@ -48,12 +48,12 @@ export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) =>
       });
     },
     retry: 3,
-    mutationFn: (async ({{camelcase name}}sToDelete: any = []) => {
+    mutationFn: (async (imovelsToDelete: any = []) => {
       try {
-        if ({{camelcase name}}sToDelete?.length > 0) {
+        if (imovelsToDelete?.length > 0) {
           return Promise.all(
-            {{camelcase name}}sToDelete?.map?.(({{camelcase name}}: any) =>
-              api.delete(`/{{camelcase name}}/delete?_id=${{{camelcase name}}._id}`)
+            imovelsToDelete?.map?.((imovel: any) =>
+              api.delete(`/imovel/delete?_id=${imovel._id}`)
             )
           );
         }
@@ -73,20 +73,20 @@ export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) =>
     }) as any,
   });
   const deleteSelectedAction = async () => {
-    delete{{pascalCase name}}.mutateAsync(
-      {{camelcase name}}s.filter(({{camelcase name}}: {{pascalCase name}}Props) => {{camelcase name}}.value) as any
+    deleteImovel.mutateAsync(
+      imovels.filter((imovel: ImovelProps) => imovel.value) as any
     );
   };
   const changePage = (newpage: number) => {
-    router.replace(`/{{camelcase name}}s/${newpage}`);
+    router.replace(`/imovels/${newpage}`);
   };
   useEffect(() => {
-    set{{pascalCase name}}s(data?.initialData?.{{camelcase name}}s ?? []);
-  }, [data?.initialData?.{{camelcase name}}s]);
+    setImovels(data?.initialData?.imovels ?? []);
+  }, [data?.initialData?.imovels]);
   return {
-    {{camelcase name}}s,
-    set{{pascalCase name}}s,
-    handlePrefetch{{pascalCase name}},
+    imovels,
+    setImovels,
+    handlePrefetchImovel,
     deleteSelectedAction,
     page,
     setPage: changePage,

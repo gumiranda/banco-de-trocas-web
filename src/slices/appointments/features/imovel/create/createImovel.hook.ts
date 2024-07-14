@@ -1,26 +1,26 @@
 "use client";
 import { useUi } from "@/shared/libs";
 import {
-  Create{{pascalCase name}}FormData,
-  SubmitCreate{{pascalCase name}}Handler,
-  useCreate{{pascalCase name}}Lib,
-} from "./create{{pascalCase name}}.lib";
+  CreateImovelFormData,
+  SubmitCreateImovelHandler,
+  useCreateImovelLib,
+} from "./createImovel.lib";
 import { useRouter } from "next/navigation";
 import { api } from "@/shared/api";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const useCreate{{pascalCase name}} = () => {
+export const useCreateImovel = () => {
   const { t } = useTranslation(["PAGES"]);
   const { showModal } = useUi();
   const router = useRouter();
   const [active, setActive] = useState(false);
-  const create{{pascalCase name}} = useMutation({
-    mutationFn: async ({{camelCase name}}: Create{{pascalCase name}}FormData) => {
+  const createImovel = useMutation({
+    mutationFn: async (imovel: CreateImovelFormData) => {
       try {
-        const { data } = await api.post("/{{camelCase name}}/add", {
-          ...{{camelCase name}},
+        const { data } = await api.post("/imovel/add", {
+          ...imovel,
         });
         if (!data) {
           showModal({
@@ -37,7 +37,7 @@ export const useCreate{{pascalCase name}} = () => {
         }
         showModal({
           content: t("PAGES:MESSAGES.successMessage", {
-            domain: t("PAGES:HOME_PAGE.{{camelCase name}}", {
+            domain: t("PAGES:HOME_PAGE.imovel", {
               defaultValue: "Categoria",
             }),
             operation: t("PAGES:MESSAGES.create", {
@@ -51,7 +51,7 @@ export const useCreate{{pascalCase name}} = () => {
           }),
           type: "success",
         });
-        router.push("/{{camelCase name}}s/1");
+        router.push("/imovels/1");
         return data;
       } catch (error) {
         showModal({
@@ -67,17 +67,17 @@ export const useCreate{{pascalCase name}} = () => {
       }
     },
   });
-  const { register, handleSubmit, formState } = useCreate{{pascalCase name}}Lib();
-  const handleCreate{{pascalCase name}}: SubmitCreate{{pascalCase name}}Handler = async (
-    values: Create{{pascalCase name}}FormData
+  const { register, handleSubmit, formState } = useCreateImovelLib();
+  const handleCreateImovel: SubmitCreateImovelHandler = async (
+    values: CreateImovelFormData
   ) => {
-    await create{{pascalCase name}}.mutateAsync({ ...values, active });
+    await createImovel.mutateAsync({ ...values, active });
   };
   return {
     formState,
     register,
     handleSubmit,
-    handleCreate{{pascalCase name}},
+    handleCreateImovel,
     active,
     setActive,
   };

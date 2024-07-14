@@ -4,15 +4,15 @@ import { useUi } from "@/shared/libs";
 import { api } from "@/shared/api";
 import { queryClientInstance } from "@/shared/api";
 import { useRouter } from "next/navigation";
-import { useGetInfinite{{pascalCase name}}s } from "@/slices/appointments/entidades/{{camelCase name}}/{{camelCase name}}.lib";
+import { useGetInfiniteImovels } from "@/slices/appointments/entidades/imovel/imovel.lib";
 import { useTranslation } from "react-i18next";
 
-export const use{{pascalCase name}}InfiniteList = () => {
+export const useImovelInfiniteList = () => {
   const { t } = useTranslation(["PAGES"]);
 
   const router = useRouter();
   const { showModal, loading } = useUi();
-  const all = useGetInfinite{{pascalCase name}}s({
+  const all = useGetInfiniteImovels({
     getNextPageParam: (lastPage: any) => lastPage.next,
     getPreviousPageParam: (firstPage: any) => firstPage.prev,
   } as any);
@@ -28,15 +28,15 @@ export const use{{pascalCase name}}InfiniteList = () => {
   const firstPage: any = data?.pages[0];
   const total: any = (firstPage?.totalCount as any) || {};
   const deleteSelectedAction = async (item: any) => {
-    delete{{pascalCase name}}.mutateAsync([item] as any);
+    deleteImovel.mutateAsync([item] as any);
   };
-  const delete{{pascalCase name}} = useMutation({
-    mutationFn: async ({{camelCase name}}sToDelete: any = []) => {
+  const deleteImovel = useMutation({
+    mutationFn: async (imovelsToDelete: any = []) => {
       try {
-        if ({{camelCase name}}sToDelete?.length > 0) {
+        if (imovelsToDelete?.length > 0) {
           return Promise.all(
-            {{camelCase name}}sToDelete?.map?.(({{camelCase name}}: any) =>
-              api.delete(`/{{camelCase name}}/delete?_id=${{{camelCase name}}._id}`)
+            imovelsToDelete?.map?.((imovel: any) =>
+              api.delete(`/imovel/delete?_id=${imovel._id}`)
             )
           );
         }
@@ -55,8 +55,8 @@ export const use{{pascalCase name}}InfiniteList = () => {
       }
     },
     onSuccess: () => {
-      queryClientInstance.invalidateQueries(["{{camelCase name}}sInfinite", data?.pages ?? 1] as any);
-      queryClientInstance.refetchQueries(["{{camelCase name}}sInfinite", data?.pages] as any);
+      queryClientInstance.invalidateQueries(["imovelsInfinite", data?.pages ?? 1] as any);
+      queryClientInstance.refetchQueries(["imovelsInfinite", data?.pages] as any);
       router.refresh();
     },
     onError: () => {

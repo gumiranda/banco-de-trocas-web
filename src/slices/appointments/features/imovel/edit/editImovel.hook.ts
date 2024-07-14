@@ -1,26 +1,27 @@
 "use client";
 import { useUi } from "@/shared/libs";
+import { EditImovelFormProps } from "./EditImovelForm";
 import {
-  Create{{pascalCase name}}FormData,
-  SubmitCreate{{pascalCase name}}Handler,
-  useCreate{{pascalCase name}}Lib,
-} from "./create{{pascalCase name}}.lib";
+  EditImovelFormData,
+  SubmitEditImovelHandler,
+  useEditImovelLib,
+} from "./editImovel.lib";
 import { useRouter } from "next/navigation";
 import { api } from "@/shared/api";
 import { useMutation } from "@tanstack/react-query";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const useCreate{{pascalCase name}} = () => {
+export const useEditImovel = (props: EditImovelFormProps) => {
   const { t } = useTranslation(["PAGES"]);
   const { showModal } = useUi();
+  const { imovel: currentImovel } = props;
   const router = useRouter();
-  const [active, setActive] = useState(false);
-  const create{{pascalCase name}} = useMutation({
-    mutationFn: async ({{camelCase name}}: Create{{pascalCase name}}FormData) => {
+  const editImovel = useMutation({
+    mutationFn: async (imovel: EditImovelFormData) => {
       try {
-        const { data } = await api.post("/{{camelCase name}}/add", {
-          ...{{camelCase name}},
+        const { data } = await api.patch(`/imovel/update?_id=${currentImovel._id}`, {
+          ...imovel,
+          updatedAt: new Date(),
         });
         if (!data) {
           showModal({
@@ -37,21 +38,21 @@ export const useCreate{{pascalCase name}} = () => {
         }
         showModal({
           content: t("PAGES:MESSAGES.successMessage", {
-            domain: t("PAGES:HOME_PAGE.{{camelCase name}}", {
+            domain: t("PAGES:HOME_PAGE.imovel", {
               defaultValue: "Categoria",
             }),
-            operation: t("PAGES:MESSAGES.create", {
-              defaultValue: "criada",
+            operation: t("PAGES:MESSAGES.edit", {
+              defaultValue: "editada",
             }),
             defaultValue:
-              "Categoria criada com sucesso, você será redirecionado para a lista de categorias",
+              "Categoria editada com sucesso, você será redirecionado para a lista de categorias",
           }),
           title: t("PAGES:MESSAGES.success", {
             defaultValue: "Sucesso",
           }),
           type: "success",
         });
-        router.push("/{{camelCase name}}s/1");
+        router.push("/imovels/1");
         return data;
       } catch (error) {
         showModal({
@@ -67,18 +68,11 @@ export const useCreate{{pascalCase name}} = () => {
       }
     },
   });
-  const { register, handleSubmit, formState } = useCreate{{pascalCase name}}Lib();
-  const handleCreate{{pascalCase name}}: SubmitCreate{{pascalCase name}}Handler = async (
-    values: Create{{pascalCase name}}FormData
+  const { register, handleSubmit, formState } = useEditImovelLib(props);
+  const handleEditImovel: SubmitEditImovelHandler = async (
+    values: EditImovelFormData
   ) => {
-    await create{{pascalCase name}}.mutateAsync({ ...values, active });
+    await editImovel.mutateAsync(values);
   };
-  return {
-    formState,
-    register,
-    handleSubmit,
-    handleCreate{{pascalCase name}},
-    active,
-    setActive,
-  };
+  return { formState, register, handleSubmit, handleEditImovel };
 };

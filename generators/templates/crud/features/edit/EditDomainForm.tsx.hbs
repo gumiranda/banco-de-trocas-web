@@ -1,11 +1,14 @@
 import { {{pascalCase name}}Props } from "@/slices/appointments/entidades/{{camelCase name}}";
 import { useEdit{{pascalCase name}} } from "./edit{{pascalCase name}}.hook";
 import { BoxCreateItem, FormControl, GenericDetailsItem, GridForm } from "@/shared/ui";
+import { useTranslation } from "react-i18next";
 
 export interface Edit{{pascalCase name}}FormProps {
   {{camelCase name}}: {{pascalCase name}}Props;
 }
 export const Edit{{pascalCase name}}Form = ({ {{camelCase name}} }: Edit{{pascalCase name}}FormProps) => {
+  const { t } = useTranslation("PAGES");
+
   const { formState, register, handleSubmit, handleEdit{{pascalCase name}} } = useEdit{{pascalCase name}}({
     {{camelCase name}},
   });
