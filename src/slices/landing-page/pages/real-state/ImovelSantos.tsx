@@ -37,7 +37,9 @@ const properties = [
 
       <p>Vamos negociar!</p>
     `,
-    images: [],
+    images: [
+      "https://scontent.fudi1-1.fna.fbcdn.net/v/t39.30808-6/451364766_889974599820877_2602056510334573659_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zHSrNiN9rrcQ7kNvgECnM2q&_nc_ht=scontent.fudi1-1.fna&oh=00_AYCKdrCIopyF5L-mT9Vc-PGnB_0t3d0zh1D-iYezMGBnAQ&oe=6699E3B4",
+    ],
   },
 ];
 

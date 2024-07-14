@@ -34,7 +34,7 @@ export const PropertyList = ({
       size="xl"
       mb={4}
       borderBottom="2px solid orange.400"
-      pb={2}
+      pb={6}
       {...animationProps}
     >
       Oportunidade de imóvel
