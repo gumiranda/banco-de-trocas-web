@@ -9,6 +9,8 @@ import {
   SimpleGrid,
   keyframes,
 } from "@chakra-ui/react";
+import ReactHtmlParser from "react-html-parser";
+
 // Definição de keyframes para animações
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -53,8 +55,8 @@ export const PropertyList = ({
           <Heading fontSize="xl" color="gray.800" letterSpacing="tight">
             {property.title}
           </Heading>
-          <Text mt={4} color="gray.800" lineHeight="tall">
-            {property.description}
+          <Text mt={4} color="gray.800" lineHeight="tall" fontSize="xl">
+            {ReactHtmlParser(property.description)}
           </Text>
           {property?.images?.map?.((image, ix) => (
             <Img key={ix} src={image} alt="Imagem do Imóvel" borderRadius="md" mt={4} />
