@@ -71,4 +71,47 @@ const slugs = {
       "https://scontent.fudi1-2.fna.fbcdn.net/v/t39.30808-6/450938811_889644539853883_999609297052341423_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ETbBBFhKtfYQ7kNvgGZ6tC9&_nc_ht=scontent.fudi1-2.fna&oh=00_AYBmLEKQ27AWNCXrmhLMqbc6GVCGPqqOlcPpzGvgkpO_6Q&oe=6699E896",
     ],
   },
+  valeribeira: {
+    id: 2,
+    title: "Oportunidade no Vale do Ribeira!",
+    description: `
+      Sempre eu digo às pessoas, terra é o bem mais precioso. O planeta não aumenta e a cada dia 1 alqueire vai valendo mais. Tem pessoas que recebem aluguéis fora do comum de áreas que não valiam nada e hoje rendem fortunas mensais.
+      <br/><br/>
+      Vamos lá direto ao assunto. R$1.200.000,00 por 10 alqueires com 45 mil pés de palmito pupunha em 6 alqueires. Já foram plantados 80 mil pés. A proprietária, com 82 anos, não tem como cuidar, e os filhos não têm interesse. Esta é sua oportunidade.
+      <br/><br/>
+      Detalhes do Imóvel:
+      <ul>
+        <li>Localização: 7 km de estrada cascalhada, 4 km de asfalto até a cidade de Sete Barras, Vale da Ribeira.</li>
+        <li>Distância: 200 km de São Paulo e 200 km de Curitiba PR, próximo a Registro SP.</li>
+        <li>Atividades Anteriores: Criou búfalos e suínos, chegando a 1.000 porcos da raça branca.</li>
+        <li>Documentação: Incra e escritura em Cartório.</li>
+        <li>Infraestrutura:</li>
+        <ul>
+          <li>Casa sede com 3 dormitórios, sendo uma suíte com hidromassagem.</li>
+          <li>Salão de festas de 150 m² com 2 banheiros, churrasqueira, fogão à lenha, forno à lenha.</li>
+          <li>4 poços manilhados.</li>
+          <li>Baias para 3 cavalos.</li>
+          <li>Garagem para 2 veículos.</li>
+          <li>Garagem para trator e máquinas.</li>
+          <li>Barracão para criações com 1.200 m², 27 baias.</li>
+          <li>Curral com mangueiro para leiteria.</li>
+          <li>Pomar de mexericas.</li>
+          <li>3 baias para galinheiro ou coelho.</li>
+        </ul>
+      </ul>
+      <br/>
+      Resumo da Operação: R$1.200.000,00 sendo R$500.000,00 em dinheiro e R$700.000,00 em imóveis, inclusive litoral.
+      <br/><br/>
+      <b>Contato:</b> Ligue 11 991843119 - Gilson Aguiar CRECI 36.924 F
+    `,
+    images: [
+      "https://i.ibb.co/6bMHjCJ/451410237-889516683200002-8276621441195459129-n.jpg",
+      "https://i.ibb.co/tMgmLKd/449826868-889516799866657-4441169705592358397-n-1.jpg",
+      "https://i.ibb.co/tCZCjhq/449826868-889516799866657-4441169705592358397-n.jpg",
+      "https://i.ibb.co/XxMM99T/450954974-889516709866666-6407925238882253460-n.jpg",
+      "https://i.ibb.co/RjX1ZgZ/451099062-889516656533338-1754391368274342814-n.jpg",
+      "https://i.ibb.co/3dcV7n2/451223812-889516736533330-6128051116196627483-n.jpg",
+      "https://i.ibb.co/Sc6PCT9/451430645-889516839866653-1224910720821095992-n.jpg",
+    ],
+  },
 };
