@@ -1,0 +1,77 @@
+Moving and freight marketplace
+
+#### Functionalities
+1. **Connection of Different Professionals**:
+- Furniture dismantlers
+- Chargers
+- Truck drivers
+- Moving/freight companies
+
+2. **Direct Hiring**:
+- Individual services
+- Complete service packages
+
+### User Journey Flow
+
+2. **Service Search**
+3. **Professional View**
+4. **Comparison and Selection**
+5. **Hiring and Payment**
+6. **Service Monitoring**
+7. **Evaluation and Feedback**
+
+### Detailed Screens and Functions
+
+#### 2. Service Search
+
+- **Service Search Screen**
+- Search filters (type of service, location, date, time, vehicle size)
+- Search field with autocomplete for locations
+- "Search" button
+
+#### 3. Professional View
+
+- **Search Results Screen**
+- List of available professionals, presented on cards
+- Basic information (name, photo, review, price, availability)
+
+- **Professional Card**
+- Name and photo of the professional
+- Rating and number of reviews
+- Price per service or package
+- Availability
+- "View Details" button
+
+#### 4. Comparison and Selection
+
+- **Professional Details Screen**
+- Detailed information (name, photo, reviews, WhatsApp, specialties, service history)
+- "Contract Service" or "Add to Package" button
+- Rating and feedback system from previous customers
+- Details of the services offered (packaging, disassembly, assembly, insurance)
+
+#### 5. Hiring and Payment
+
+- **Service Cart Screen**
+- List of selected services (individual or package)
+- Total price and details of each service
+- "Proceed to Payment" button
+
+- **Payment Screen**
+- Available payment methods (credit card, debit card, PIX, digital wallets)
+- Fields for entering payment information
+- "Confirm Payment" button
+
+#### 6. Service Monitoring
+
+- **Service Monitoring Screen**
+- Real-time service tracking
+- Service status (in progress, completed)
+- Direct communication with the professional via internal chat
+- Updates and notifications about service progress
+
+#### 7. Rating and Feedback
+
+- **Service Evaluation Screen**
+- Star rating system
+- Fields for written feedback

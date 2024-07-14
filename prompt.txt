@@ -1,0 +1,14 @@
+
+Crie animações complexas utilizando @keyframes e propriedades de animação para transições suaves e interativas.
+
+
+Adicione transições suaves entre mudanças de estado dos elementos para melhorar a experiência do usuário.
+
+Utilize CSS Masking com o mask e mask-image para criar máscaras personalizadas, revelando partes específicas de um elemento.
+
+include 5 new functionalities must have in this file (write in only file) :
+
+implement the functionalities (integrating with api,improving the code,etc) in this file to use in real scenario (write in only file):
+
+Scroll Snap:
+Use scroll-snap-type e scroll-snap-align para criar interfaces onde o conteúdo "encaixa" em pontos específicos durante a rolagem.

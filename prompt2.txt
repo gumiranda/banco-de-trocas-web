@@ -1,0 +1,159 @@
+Desenvolver um sistema de marketplace para fretes e mudanças envolve a criação de diversas funcionalidades que facilitam a interação entre os usuários e melhoram a eficiência do serviço oferecido. Aqui estão sete telas essenciais que vão além de login/cadastro e operações CRUD:
+
+### 1. **Dashboard do Usuário**
+
+**Descrição:**
+Uma tela principal onde os usuários podem visualizar um resumo de suas atividades, status de pedidos, notificações e informações importantes.
+
+### Resumo de Pedidos
+
+
+#### 1. Atualização em Tempo Real
+**Detalhes:**
+- **Sincronização Automática:** O sistema deve sincronizar dados continuamente com o servidor para garantir que qualquer mudança de status seja imediatamente refletida na tela do usuário.
+- **WebSockets:** Utilizar WebSockets para comunicação bidirecional em tempo real entre o cliente e o servidor.
+- **Feedback Visual:** Notificações visuais (ex.: ícones de carregamento) devem indicar ao usuário que a informação está sendo atualizada.
+- **Fallback:** Implementar uma verificação periódica de atualização (ex.: a cada 5 minutos) como fallback para garantir que nenhuma atualização seja perdida.
+
+#### 2. Classificação Automática
+**Detalhes:**
+- **Status Definidos:** Criar categorias de status claras, como "Em Andamento", "Concluídos", "Cancelados", e "Pendentes".
+- **Regras de Classificação:** Definir regras precisas para a movimentação de pedidos entre categorias com base nas ações dos usuários e feedback das transportadoras.
+- **Atualização Dinâmica:** Implementar lógica para reclassificar automaticamente os pedidos à medida que seu status muda.
+- **Notificação:** Enviar notificações ao usuário sobre a mudança de classificação de um pedido importante.
+
+#### 3. Exibição Prioritária
+**Detalhes:**
+- **Ordenação Padrão:** Exibir pedidos em andamento no topo da lista por padrão.
+- **Destacar Pedidos Ativos:** Usar estilos visuais diferenciados (ex.: cores, bordas) para destacar pedidos em andamento.
+- **Agrupamento:** Agrupar visualmente os pedidos por status com separadores claros para facilitar a navegação.
+- **Customização do Usuário:** Permitir que o usuário ajuste a prioridade de exibição conforme suas preferências.
+
+#### 4. Detalhamento Resumido
+**Detalhes:**
+- **Campos Essenciais:** Incluir data do pedido, nome da transportadora, status atual e valor no resumo.
+- **Exibição Concisa:** Mostrar informações resumidas de forma clara e legível, evitando sobrecarga de informações.
+- **Acesso a Detalhes:** Prover um link ou botão que permita o usuário acessar mais detalhes do pedido.
+- **Atualização de Campos:** Certificar-se de que todos os campos exibidos sejam atualizados em tempo real junto com o status do pedido.
+
+#### 5. Filtro Personalizável
+**Detalhes:**
+- **Opções de Filtro:** Oferecer filtros por data, tipo de serviço, transportadora, e faixa de valor.
+- **Interface Intuitiva:** Desenvolver uma interface de filtragem fácil de usar, com menus suspensos, caixas de seleção e campos de entrada de texto.
+- **Combinação de Filtros:** Permitir a combinação de múltiplos filtros para refinar os resultados.
+- **Salvamento de Filtros:** Oferecer a opção de salvar configurações de filtro frequentes para uso futuro.
+
+#### 6. Pesquisa por ID de Pedido
+**Detalhes:**
+- **Campo de Busca:** Disponibilizar um campo de busca em posição de destaque na tela de resumo de pedidos.
+- **Autocompletar:** Implementar funcionalidade de autocompletar para agilizar a localização de pedidos.
+- **Feedback Imediato:** Fornecer feedback visual imediato sobre o status da busca (ex.: ícone de busca, carregamento).
+- **Resultado Detalhado:** Exibir resultados detalhados instantaneamente quando o ID completo for inserido.
+
+#### 7. Histórico de Alterações
+**Detalhes:**
+- **Registro de Eventos:** Manter um registro detalhado de todas as alterações de status, incluindo data, hora e usuário que realizou a alteração.
+- **Exibição Cronológica:** Apresentar o histórico de alterações em ordem cronológica, com a alteração mais recente no topo.
+- **Detalhes das Alterações:** Incluir detalhes sobre a alteração, como comentários ou notas associadas.
+- **Acessibilidade:** Permitir que os usuários visualizem o histórico de alterações a partir do resumo do pedido, com um botão ou link claro.
+- **Exportação:** Oferecer a possibilidade de exportar o histórico de alterações para formatos como PDF ou CSV.
+
+### Notificações
+
+1. **Notificação Instantânea:** Notificações devem ser enviadas imediatamente após qualquer alteração relevante no status de um pedido ou nova mensagem.
+2. **Preferências de Notificação:** Usuários devem poder personalizar suas preferências de notificação (ex.: email, SMS, push).
+3. **Resumo Diário:** Enviar um resumo diário das notificações se o usuário optar por reduzir a quantidade de alertas em tempo real.
+4. **Prioridade de Notificação:** Notificações devem ser classificadas por prioridade (alta, média, baixa) para destacar as mais urgentes.
+5. **Histórico de Notificações:** Manter um histórico acessível das notificações recebidas pelo usuário.
+6. **Silenciamento Temporário:** Usuários devem ter a opção de silenciar notificações por um período de tempo definido.
+7. **Confirmação de Leitura:** Notificações importantes devem solicitar confirmação de leitura para garantir que o usuário tomou ciência.
+
+### Acesso Rápido
+
+1. **Personalização do Usuário:** Permitir que os usuários personalizem quais links rápidos desejam ver na tela inicial.
+2. **Análise de Uso:** O sistema deve sugerir links rápidos com base no uso frequente do usuário.
+3. **Organização por Prioridade:** Links rápidos devem ser organizados com base na frequência de uso e relevância.
+4. **Ícones Intuitivos:** Cada link rápido deve ser acompanhado por um ícone intuitivo para facilitar a identificação visual.
+5. **Atualização Dinâmica:** A lista de links rápidos deve ser atualizada dinamicamente conforme os padrões de uso mudam.
+6. **Acesso Offline:** Algumas funcionalidades de acesso rápido devem ser disponíveis offline (ex.: visualizar histórico).
+7. **Feedback do Usuário:** Coletar feedback dos usuários sobre a utilidade dos links rápidos e ajustar conforme necessário.
+
+### Estatísticas
+
+1. **Atualização Periódica:** Estatísticas devem ser atualizadas diariamente para refletir dados recentes.
+2. **Comparação Temporal:** Incluir gráficos que permitam comparações entre diferentes períodos (ex.: mês anterior, ano anterior).
+3. **Filtros Avançados:** Usuários devem poder filtrar as estatísticas por diferentes critérios (ex.: tipo de serviço, transportadora, período).
+4. **Visualização Personalizável:** Permitir que os usuários personalizem os tipos de gráficos e dados que desejam ver.
+5. **Indicadores de Desempenho:** Incluir KPIs (Key Performance Indicators) relevantes, como economia mensal, média de gastos por serviço, etc.
+6. **Exportação de Dados:** Oferecer a opção de exportar estatísticas em formatos como PDF ou Excel para análise externa.
+7. **Alertas de Desempenho:** Enviar alertas automáticos se determinadas métricas de desempenho atingirem valores críticos (ex.: gastos excedendo orçamento previsto).
+
+
+
+### 2. **Busca e Filtragem de Transportadoras**
+
+**Descrição:**
+Uma tela onde os usuários podem procurar transportadoras e motoristas com base em critérios específicos.
+
+**Funcionalidades:**
+- **Campos de Busca:** Pesquisa por localidade, tipo de serviço, data e preço.
+- **Filtros Avançados:** Filtragem por avaliações, capacidade do veículo, tipo de carga, etc.
+- **Exibição de Resultados:** Lista de transportadoras com informações básicas e possibilidade de visualizar detalhes.
+- **Mapas Integrados:** Localização geográfica das transportadoras disponíveis.
+
+### 3. **Detalhes da Transportadora/Oferta de Serviço**
+
+**Descrição:**
+Tela que exibe informações detalhadas sobre uma transportadora ou oferta de serviço específica.
+
+**Funcionalidades:**
+- **Informações do Fornecedor:** Perfil da transportadora, incluindo avaliações, histórico de serviços e informações de contato.
+- **Detalhes da Oferta:** Tipo de veículo, capacidade, preço, termos do serviço.
+- **Galeria de Fotos:** Imagens dos veículos e outros elementos relevantes.
+- **Botão de Contratar:** Ação direta para contratar o serviço.
+
+### 4. **Agenda e Rastreamento de Pedidos**
+
+**Descrição:**
+Tela para gerenciar e acompanhar o status de pedidos em tempo real.
+
+**Funcionalidades:**
+- **Agenda:** Calendário com agendamentos futuros.
+- **Status do Pedido:** Informações sobre o progresso do frete/mudança (ex.: em trânsito, entregue).
+- **Rastreamento em Tempo Real:** Mapa com localização atual do veículo.
+- **Histórico de Comunicação:** Mensagens e atualizações trocadas com a transportadora.
+
+### 5. **Avaliação e Feedback**
+
+**Descrição:**
+Tela para que os usuários possam avaliar e deixar feedback sobre os serviços utilizados.
+
+**Funcionalidades:**
+- **Sistema de Avaliação:** Classificação por estrelas ou pontos.
+- **Comentários:** Campo para feedback textual detalhado.
+- **Visualização de Avaliações:** Exibição das avaliações e comentários de outros usuários.
+- **Respostas do Fornecedor:** Possibilidade da transportadora responder ao feedback.
+
+### 6. **Suporte e Atendimento ao Cliente**
+
+**Descrição:**
+Tela dedicada ao suporte, onde os usuários podem resolver problemas e obter ajuda.
+
+**Funcionalidades:**
+- **Base de Conhecimento:** Artigos, FAQs e tutoriais sobre como usar o sistema.
+- **Contato com Suporte:** Formulário para envio de solicitações de suporte ou chat ao vivo.
+- **Histórico de Suporte:** Registro das interações anteriores com o suporte.
+- **Feedback de Suporte:** Avaliação da qualidade do atendimento recebido.
+
+### 7. **Painel Administrativo para Transportadoras**
+
+**Descrição:**
+Uma interface para transportadoras gerenciarem seus serviços, veículos e pedidos.
+
+**Funcionalidades:**
+- **Gerenciamento de Veículos:** Cadastro e edição de informações sobre os veículos.
+- **Gerenciamento de Serviços:** Criação e atualização de ofertas de serviço.
+- **Acompanhamento de Pedidos:** Visualização e atualização do status dos pedidos em andamento.
+- **Relatórios e Análises:** Estatísticas sobre performance, ganhos e avaliações recebidas.
+
+Essas telas proporcionarão uma experiência completa e eficiente tanto para os clientes quanto para as transportadoras, facilitando o processo de contratação de serviços de frete e mudança.

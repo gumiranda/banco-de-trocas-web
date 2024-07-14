@@ -1,0 +1,147 @@
+obs:
+se tiver navegação entre rotas utilizar o router do next 15: import { useRouter } from "next/navigation";
+adaptar a iteração dos componentes pra usarem map (ao invés de ficarem soltos na tela de forma fixa) e um exemplo de uso do componente pai
+organizar os componentes na tela usando display grid ou flexbox de forma avançada
+usar no mínimo 15 estilos css em cada componente
+considerar que o tema usado na aplicação tem esse estilo global
+ styles: { global: { body: { bg: "#212121", color: "white" } } }
+
+convert from styled components to chakra ui:
+
+
+no contexto de uma aplicação de marketplace de mudanças e fretes, faça a seguinte ação:
+
+considerando que o tema usado na aplicação tem esse estilo global
+ styles: { global: { body: { bg: "#212121", color: "white" } } }
+ faça a seguinte ação:
+
+incluir no mínimo mais 15 estilos css em:
+
+incluir no mínimo mais 7 componentes visuais nessa página (escrever tudo num arquivo só):
+
+organizar melhor os componentes na tela usando display grid ou flexbox (escrever tudo num arquivo só):
+
+incluir no mínimo mais 15 estilos css em cada componente  (escrever tudo num arquivo só):
+
+
+
+incluir no mínimo mais 80 linhas de lógica complexa em cada componente  (escrever tudo num arquivo só) com exemplos reais de uso:
+
+faça a integração real com uma api usando axios
+
+
+incluir no mínimo mais 15 funcionalidades usando react hooks e context api (escrever tudo num arquivo só)
+
+dividir esse componente em no mínimo 7 sub componentes (escrever tudo num arquivo só)
+
+aplique atomic design subdividindo cada componente em pelo menos 7
+
+
+
+escreva 7 regras de negocio que esse componente poderia ter num marketplace de
+agendamentos online de serviços de beleza
+
+faça um design mais bonito nesse componente
+
+no contexto de uma aplicação de marketplace de mudanças e fretes,
+ faça a seguinte ação: considerando que o tema usado na aplicação tem esse estilo global
+ styles: { global: { body: { bg: "#212121", color: "white" } } } voce deve
+ incluir no mínimo mais 80 linhas de lógica complexa
+  e no mínimo mais 15 estilos css  (escrever tudo num arquivo só):
+
+
+
+EditOwnerForm
+
+Fotos do Estabelecimento: Permita que o proprietário faça upload de fotos do interior e exterior do estabelecimento, bem como de amostras do trabalho realizado, para que os clientes possam ter uma ideia do ambiente e dos serviços oferecidos.
+
+
+Interface do Usuário:
+
+Crie uma seção na interface do usuário onde o proprietário possa fazer o upload das fotos.
+Isso pode ser feito adicionando um novo componente à forma atual, abaixo do formulário de edição do estabelecimento.
+Componente de Upload de Fotos:
+
+Crie um componente que permita ao usuário fazer o upload de múltiplas fotos.
+Este componente pode incluir um botão "Adicionar Foto" que abre o explorador de arquivos do usuário para selecionar as fotos desejadas.
+À medida que as fotos são selecionadas, elas podem ser exibidas em miniaturas para que o usuário possa ver quais fotos estão sendo carregadas.
+Armazenamento de Fotos:
+
+Configure um sistema de armazenamento para as fotos. Isso pode ser um serviço de armazenamento em nuvem como AWS S3, Google Cloud Storage, ou até mesmo um servidor próprio.
+Após o upload das fotos, armazene os URLs das fotos no banco de dados do estabelecimento para que possam ser recuperados e exibidos posteriormente.
+Exibição das Fotos:
+
+Após o upload, as fotos devem ser exibidas na página de detalhes do estabelecimento para que os clientes possam visualizá-las.
+Você pode criar uma galeria de fotos que permite aos usuários navegar pelas fotos em tela cheia ou em miniatura.
+Gestão de Fotos:
+
+Permita que o proprietário gerencie as fotos do estabelecimento, incluindo a exclusão de fotos indesejadas ou a adição de novas fotos.
+Isso pode ser feito adicionando botões de edição/modificação ao lado de cada foto na galeria ou fornecendo uma página separada de gerenciamento de fotos.
+Considerações de Segurança:
+
+Implemente medidas de segurança para proteger as fotos do estabelecimento, como verificação de tipo de arquivo, limites de tamanho de arquivo e prevenção contra injeção de código malicioso.
+
+Políticas de Cancelamento e Reagendamento: Além do tempo limite para reagendamento/cancelamento já incluído, pode ser útil permitir que o proprietário defina suas políticas específicas para reagendamento e cancelamento, como taxas de cancelamento e políticas de reembolso.
+Campo de Taxas de Cancelamento: Adicione um campo onde o proprietário pode especificar as taxas de cancelamento para os clientes. Isso pode ser uma entrada numérica onde o proprietário pode definir um valor em porcentagem da taxa de serviço ou um valor fixo.
+
+Opções de Política de Reembolso: Forneça opções para o proprietário escolher sua política de reembolso. Isso pode incluir opções como reembolso total, reembolso parcial ou nenhum reembolso. Cada opção deve vir com uma descrição para ajudar o proprietário a entender as implicações de cada escolha.
+
+Configuração de Prazo para Cancelamento/Reagendamento: Além do tempo limite já incluído, permita que o proprietário defina prazos específicos para cancelamento e reagendamento. Isso pode ser feito através de campos de entrada onde o proprietário pode especificar o número de horas ou dias antes do compromisso em que os cancelamentos e reagendamentos são permitidos sem incorrer em taxas adicionais.
+
+Campo de Observações Adicionais: Adicione um campo de texto opcional onde o proprietário pode incluir observações adicionais relacionadas às políticas de cancelamento e reagendamento. Isso pode ser usado para fornecer informações adicionais aos clientes sobre as políticas do estabelecimento.
+
+Visualização das Políticas: Ao lado das opções de configuração, inclua uma seção de visualização onde o proprietário possa revisar as políticas de cancelamento e reagendamento conforme são configuradas. Isso permite que o proprietário veja como as políticas serão apresentadas aos clientes antes de salvar as alterações.
+
+Validação de Entrada: Certifique-se de incluir validação de entrada para garantir que os valores fornecidos pelo proprietário sejam válidos. Por exemplo, verifique se as taxas de cancelamento estão dentro de um intervalo aceitável e se os prazos especificados estão em um formato válido.
+
+Implemente lazy loading para componentes pesados.
+
+Use a função useCallback para funções que são passadas como props.
+
+Minimize o número de renders desnecessários usando useEffect de forma eficiente.
+
+Utilize o React Profiler para identificar gargalos de desempenho.
+
+Implemente o código split usando React.lazy e Suspense.
+
+Use IntersectionObserver para carregar imagens e componentes somente quando estiverem visíveis.
+
+Utilize o hook useMemo para memorizar valores calculados.
+
+
+
+Adicione descrições alternativas (alt) para todas as imagens.
+
+Assegure que todos os elementos interativos possam ser acessados via teclado.
+
+Utilize aria-label e aria-labelledby para descrever componentes complexos.
+
+
+Use aria-live para atualizações dinâmicas do conteúdo.
+
+Implemente navegação por tab de maneira lógica e intuitiva.
+
+Forneça feedback visual em elementos focáveis.
+
+Adicione feedback visual para ações do usuário, como cliques e carregamentos.
+
+Utilize Toast do Chakra UI para exibir notificações temporárias.
+
+Implemente breadcrumbs para facilitar a navegação.
+
+Utilize placeholders significativos em campos de entrada de dados.
+
+Adicione tooltips para ícones ou ações que podem não ser imediatamente óbvias.
+
+Forneça mensagens de erro claras e específicas para validação de formulário.
+
+Use modais (Modal do Chakra UI) para ações que requerem confirmação.
+
+Adicione animações sutis para melhorar a experiência do usuário (useDisclosure).
+
+
+Divida componentes grandes em componentes menores e reutilizáveis.
+
+Use hooks personalizados para lógica de componentes reutilizável.
+
+Adicione alt text a todas as imagens para melhorar a acessibilidade e SEO.
