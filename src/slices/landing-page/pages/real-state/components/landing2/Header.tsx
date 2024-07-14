@@ -34,27 +34,20 @@ export const Header = () => (
     transition="all 0.3s ease"
     {...animationProps}
   >
-    <Heading
-      as="h1"
+    <Text
       textAlign={"center"}
       fontWeight="bold"
       letterSpacing="tight"
       mt={1}
-      fontSize={["4xl", "5xl"]}
+      as="h1"
+      lineHeight={0.8}
+      fontSize={["2xl", "3xl"]}
     >
       Banco de
-      <Text
-        color="tertiary.500"
-        marginLeft="3"
-        as="span"
-        letterSpacing="tight"
-        lineHeight={0.8}
-        fontSize={["4xl", "5xl"]}
-        textAlign={"center"}
-      >
+      <Text color="tertiary.500" marginLeft="2" as="span">
         trocas
       </Text>
-    </Heading>
+    </Text>
     <NextLink href={getWhatsappLink("Olá, gostaria de anunciar um imóvel.")}>
       <Button
         colorScheme="orange"
