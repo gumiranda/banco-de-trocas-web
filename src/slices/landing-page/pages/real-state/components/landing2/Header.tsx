@@ -22,6 +22,9 @@ export const Header = () => (
     as="header"
     w="100%"
     py={4}
+    position={"sticky"}
+    top={0}
+    zIndex={999}
     justify="space-between"
     align="center"
     bg="gray.800"
