@@ -191,7 +191,7 @@ export const RealStatePage = () => (
     <About />
     {/* <AboutUs /> */}
     {/* <Services /> */}
-    <PropertyList properties={properties} />
+    {/* <PropertyList properties={properties} /> */}
     {/* <Testimonials testimonials={testimonials} /> */}
     {/* <ContactForm />
     <NewsletterSubscription /> */}

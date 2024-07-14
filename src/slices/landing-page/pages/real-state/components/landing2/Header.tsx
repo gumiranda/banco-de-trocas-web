@@ -1,4 +1,4 @@
-import { Flex, Heading, Button, keyframes } from "@chakra-ui/react";
+import { Flex, Heading, Button, keyframes, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { getWhatsappLink } from "@/slices/landing-page/utils";
 
@@ -31,8 +31,26 @@ export const Header = () => (
     transition="all 0.3s ease"
     {...animationProps}
   >
-    <Heading as="h1" size="lg">
-      Corretor Gilson
+    <Heading
+      as="h1"
+      textAlign={"center"}
+      fontWeight="bold"
+      letterSpacing="tight"
+      mt={1}
+      fontSize={["4xl", "5xl"]}
+    >
+      Banco de
+      <Text
+        color="tertiary.500"
+        marginLeft="3"
+        as="span"
+        letterSpacing="tight"
+        lineHeight={0.8}
+        fontSize={["4xl", "5xl"]}
+        textAlign={"center"}
+      >
+        trocas
+      </Text>
     </Heading>
     <NextLink href={getWhatsappLink("Olá, gostaria de anunciar um imóvel.")}>
       <Button
