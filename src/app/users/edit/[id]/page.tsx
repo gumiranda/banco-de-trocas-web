@@ -20,20 +20,23 @@ async function getData(id) {
   if (!parsedCookies?.["belezixadmin.token"]) {
     return null;
   }
-  const [services, owners, data] = await Promise.all([
-    getServices(1, parseCookies(allCookies), {}),
-    getOwners(1, parseCookies(allCookies), {}),
-    getUserById(id, parsedCookies),
-  ]);
-  if (!data || !services || !owners) {
+  const [data] = await Promise.all([getUserById(id, parsedCookies)]);
+  if (!data) {
     return null;
   }
-  return { data, services, owners };
+  return { data };
 }
 export default async function Page({ params: { id } }: { params: { id: string } }) {
-  const { data, services, owners } = (await getData(id)) || {};
-  if (!data || !services || !owners) {
+  const { data } = (await getData(id)) || {};
+  if (!data) {
     redirect("/login");
   }
-  return <UserEditPage data={data} id={id} service={services} owner={owners} />;
+  return (
+    <UserEditPage
+      data={data}
+      id={id}
+      service={{ services: [], totalCount: 0, next: 0, prev: 0 }}
+      owner={{ owners: [], totalCount: 0, next: 0, prev: 0 }}
+    />
+  );
 }

@@ -35,7 +35,7 @@ export const SidebarPanel = () => {
           </NavLink> */}
           {/* */}
 
-          <NavLink icon={RiCalendar2Line} href="/home">
+          {/* <NavLink icon={RiCalendar2Line} href="/home">
             {t("PAGES:HOME_PAGE.mySchedule", {
               defaultValue: "Minha agenda",
             })}
@@ -49,13 +49,13 @@ export const SidebarPanel = () => {
             {t("PAGES:HOME_PAGE.mySubscription", {
               defaultValue: "Minha assinatura",
             })}
-          </NavLink>
+          </NavLink> */}
           <NavLink icon={RiEditCircleLine} href="/categorys/1">
             {t("PAGES:HOME_PAGE.categorys", {
               defaultValue: "Categorias",
             })}
           </NavLink>
-          <NavLink icon={RiWalkFill} href="/services/1">
+          {/* <NavLink icon={RiWalkFill} href="/services/1">
             {t("PAGES:HOME_PAGE.services", {
               defaultValue: "Serviços",
             })}
@@ -94,7 +94,7 @@ export const SidebarPanel = () => {
             {t("PAGES:HOME_PAGE.rides", {
               defaultValue: "Corridas",
             })}
-          </NavLink>
+          </NavLink> */}
           <NavLink icon={RiUserSettingsLine} href={`/users/delete/${user?._id}`}>
             Minha conta
           </NavLink>
