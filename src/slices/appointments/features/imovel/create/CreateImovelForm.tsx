@@ -28,7 +28,7 @@ export const CreateImovelForm = () => {
       {photos?.length > 0 && (
         <BoxCreateItem
           onSubmit={handleSubmit(handleCreateImovel)}
-          title={"Criar imovel"}
+          title={"Cadastrar imóvel"}
           isLoadingSaveButton={formState.isSubmitting}
           cancelRoute={"/imovels/1"}
         >

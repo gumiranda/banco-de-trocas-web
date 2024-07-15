@@ -25,11 +25,16 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
           { id: "_id", label: "Id" },
           {
             id: "name",
-            label: t("PAGES:FIELDS.name", {
-              defaultValue: "Nome",
-            }),
+            label: "Título",
           },
-          { id: "createdById", label: "Id do criador" },
+          {
+            id: "description",
+            label: "Descrição",
+          },
+          {
+            id: "cityLabel",
+            label: "Localização",
+          },
           {
             id: "createdAt",
             label: t("PAGES:FIELDS.createdAt", {
@@ -40,9 +45,25 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
       />
       <GridForm>
         <FormControl
-          label="Nome da imovel"
+          label="Título do imovel"
           error={formState.errors.name}
           {...register("name")}
+        />
+        <FormControl
+          label="Descrição do imovel"
+          textarea
+          error={formState.errors.description}
+          {...register("description")}
+        />
+        <FormControl
+          label="Cidade do imovel"
+          error={formState.errors.city}
+          {...register("city")}
+        />
+        <FormControl
+          label="Estado do imovel"
+          error={formState.errors.uf}
+          {...register("uf")}
         />
       </GridForm>
     </BoxCreateItem>

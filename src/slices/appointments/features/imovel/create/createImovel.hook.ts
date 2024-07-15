@@ -10,6 +10,7 @@ import { api } from "@/shared/api";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { createSlug } from "../create-slug";
 
 export const useCreateImovel = () => {
   const { t } = useTranslation(["PAGES"]);
@@ -23,6 +24,7 @@ export const useCreateImovel = () => {
         const { data } = await api.post("/imovel/add", {
           ...imovel,
           cityLabel: imovel.city + " - " + imovel.uf,
+          slug: createSlug(imovel.name + " - " + imovel.city + " - " + imovel.uf),
           photos,
         });
         if (!data) {
