@@ -4,6 +4,6 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `${config.systemName} | Criar Imovel`,
-  description: `Página de criação de imovels do ${config.systemName}. Aqui você pode criar imovel.`,
+  description: `Página de criação de Imóveis do ${config.systemName}. Aqui você pode criar imovel.`,
 };
 export default ImovelCreatePage;

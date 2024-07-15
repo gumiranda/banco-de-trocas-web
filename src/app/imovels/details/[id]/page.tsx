@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: `${config.systemName} | Detalhes da Imovel`,
-  description: `Página de detalhes de imovels do ${config.systemName}. Aqui você pode ver os detalhes de imovel.`,
+  description: `Página de detalhes de Imóveis do ${config.systemName}. Aqui você pode ver os detalhes de imovel.`,
 };
 
 async function getData(id) {

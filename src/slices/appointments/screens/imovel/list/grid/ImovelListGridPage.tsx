@@ -69,7 +69,7 @@ export const ImovelGridPage = () => {
           routeList={"/imovels/1"}
           routeCreate={"/imovels/create"}
           entityDisplayName={"Imovel"}
-          title={"Imovels"}
+          title={"Imóveis"}
           {...imovelGridProps}
         />
       </InfiniteList>

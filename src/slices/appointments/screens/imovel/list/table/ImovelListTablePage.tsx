@@ -27,8 +27,8 @@ export const ImovelListTablePage = ({ page = 0, data }: ImovelListTablePageProps
   return (
     <>
       <Head
-        title={"Belezix Admin | Imovels"}
-        description="Página de listagem de imovels do painel de Admin Belezix"
+        title={"Belezix Admin | Imóveis"}
+        description="Página de listagem de Imóveis do painel de Admin Belezix"
       />
       <Box borderRadius={8} bg="secondary.500" p="4" flexGrow="1">
         <GenericTable
@@ -59,7 +59,7 @@ export const ImovelListTablePage = ({ page = 0, data }: ImovelListTablePageProps
           routeDetails={"/imovels/details"}
           routeCreate={"/imovels/create"}
           routeList={"/imovels/list"}
-          title={"Imovels"}
+          title={"Imóveis"}
         />
         <Pagination
           onPageChange={setPage}

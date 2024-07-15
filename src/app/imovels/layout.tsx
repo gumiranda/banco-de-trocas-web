@@ -3,8 +3,8 @@ import { Layout } from "@/shared/ui/templates/Layout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `${config.systemName} | Imovels`,
-  description: `Página de listagem de imovels do ${config.systemName}. Aqui você pode criar, editar e excluir imovels.`,
+  title: `${config.systemName} | Imóveis`,
+  description: `Página de listagem de Imóveis do ${config.systemName}. Aqui você pode criar, editar e excluir Imóveis.`,
 };
 
 export default function LayoutAuthenticated({ children }) {

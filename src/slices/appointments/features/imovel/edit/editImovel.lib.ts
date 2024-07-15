@@ -26,6 +26,9 @@ export const useEditImovelLib = (props: EditImovelFormProps) => {
     resolver: yupResolver(editImovelFormSchema),
     defaultValues: {
       name: currentImovel?.name ?? "",
+      description: currentImovel?.description ?? "",
+      city: currentImovel?.city ?? "",
+      uf: currentImovel?.uf ?? "",
     },
   });
   return { ...formProps };

@@ -9,7 +9,7 @@ import { ImovelEditPage } from "@/slices/appointments/screens/imovel/edit";
 
 export const metadata: Metadata = {
   title: `${config.systemName} | Editar Imovel`,
-  description: `Página de edição de imovels do ${config.systemName}. Aqui você pode editar imovel.`,
+  description: `Página de edição de Imóveis do ${config.systemName}. Aqui você pode editar imovel.`,
 };
 
 async function getData(id) {

@@ -50,16 +50,16 @@ export const SidebarPanel = () => {
               defaultValue: "Minha assinatura",
             })}
           </NavLink> */}
-          <NavLink icon={RiEditCircleLine} href="/imovels/1">
+          <NavLink icon={RiLuggageDepositLine} href="/imovels/1">
             {t("PAGES:HOME_PAGE.imovels", {
               defaultValue: "Imóveis",
             })}
           </NavLink>
-          <NavLink icon={RiEditCircleLine} href="/categorys/1">
+          {/* <NavLink icon={RiEditCircleLine} href="/categorys/1">
             {t("PAGES:HOME_PAGE.categorys", {
               defaultValue: "Categorias",
             })}
-          </NavLink>
+          </NavLink> */}
           {/* <NavLink icon={RiWalkFill} href="/services/1">
             {t("PAGES:HOME_PAGE.services", {
               defaultValue: "Serviços",

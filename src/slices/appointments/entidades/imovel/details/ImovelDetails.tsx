@@ -1,5 +1,5 @@
 import { Flex, GenericDetailsItem, Text, Button } from "@/shared/ui";
-import { Heading, Icon } from "@chakra-ui/react";
+import { Heading, Icon, Img } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { RiAddLine } from "react-icons/ri";
 import { ImovelProps } from "../imovel.model";
@@ -15,7 +15,7 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
     <>
       <Flex mb="8" justify="space-between" align="center">
         <Heading size="lg" fontWeight={"normal"}>
-          Imovel {imovel?.name}
+          Imóvel {imovel?.name}
         </Heading>
         <NextLink passHref href={`/imovels/edit/${imovel?._id}`}>
           <Button
@@ -33,19 +33,28 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
         fields={[
           {
             id: "name",
-            label: t("PAGES:FIELDS.name", {
-              defaultValue: "Nome",
-            }),
+            label: "Título",
           },
-          { id: "createdById", label: "Id do criador" },
+
+          {
+            id: "cityLabel",
+            label: "Localização",
+          },
           {
             id: "createdAt",
             label: t("PAGES:FIELDS.createdAt", {
               defaultValue: "Data de criação",
             }),
           },
+          {
+            id: "description",
+            label: "Descrição",
+          },
         ]}
       />
+      {imovel?.photos?.map?.((image, ix) => (
+        <Img key={ix} src={image?.url} alt="Imagem do Imóvel" borderRadius="md" mt={4} />
+      ))}
     </>
   );
 };

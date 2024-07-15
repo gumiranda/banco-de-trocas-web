@@ -15,7 +15,7 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
   return (
     <BoxCreateItem
       onSubmit={handleSubmit(handleEditImovel)}
-      title={"Editar imovel"}
+      title={"Editar imóvel"}
       isLoadingSaveButton={formState.isSubmitting}
       cancelRoute={"/imovels/1"}
     >

@@ -1,6 +1,12 @@
 export type ImovelProps = {
   _id: string;
   name: string;
+  description: string;
+  city: string;
+  cityLabel: string;
+  uf: string;
+  slug: string;
+  photos: any;
   createdAt: string;
   value?: boolean;
   active?: boolean;
@@ -26,6 +32,25 @@ class Imovel {
   get active(): boolean | undefined {
     return this.props.active;
   }
+  get description(): string {
+    return this.props.description;
+  }
+  get city(): string {
+    return this.props.city;
+  }
+  get uf(): string {
+    return this.props.uf;
+  }
+  get cityLabel(): string {
+    return this.props.cityLabel;
+  }
+  get slug(): string {
+    return this.props.slug;
+  }
+  get photos(): any {
+    return this.props.photos;
+  }
+
   format(): ImovelProps {
     return {
       ...this.props,
