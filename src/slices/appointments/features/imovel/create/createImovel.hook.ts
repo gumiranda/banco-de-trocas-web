@@ -15,6 +15,7 @@ export const useCreateImovel = () => {
   const { t } = useTranslation(["PAGES"]);
   const { showModal } = useUi();
   const router = useRouter();
+  const [photos, setPhotos] = useState<string[]>([]);
   const [active, setActive] = useState(false);
   const createImovel = useMutation({
     mutationFn: async (imovel: CreateImovelFormData) => {
@@ -22,6 +23,7 @@ export const useCreateImovel = () => {
         const { data } = await api.post("/imovel/add", {
           ...imovel,
           cityLabel: imovel.city + " - " + imovel.uf,
+          photos,
         });
         if (!data) {
           showModal({
@@ -81,5 +83,7 @@ export const useCreateImovel = () => {
     handleCreateImovel,
     active,
     setActive,
+    setPhotos,
+    photos,
   };
 };

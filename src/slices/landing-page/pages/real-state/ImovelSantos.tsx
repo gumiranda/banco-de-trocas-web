@@ -6,7 +6,7 @@ export const ImovelSantos = ({ slug }) => <ImovelNaMao properties={[slugs[slug]]
 const slugs = {
   santos: {
     id: 1,
-    title: "📢 Grande Oportunidade em Santos, SP!",
+    name: "📢 Grande Oportunidade em Santos, SP!",
     description: `
       <p>Estou oferecendo uma área incrível de quase 13.000 m² na Avenida Santista, 365, em Santos. 
       Esta propriedade inclui um prédio de 3 andares com o térreo já pronto, precisando apenas de um 
@@ -44,8 +44,7 @@ const slugs = {
   },
   sp: {
     id: 1,
-    title:
-      "Bom dia a todos e a todas. Atenção proprietários de apartamento em São Paulo de bom padrão!",
+    name: "Bom dia a todos e a todas. Atenção proprietários de apartamento em São Paulo de bom padrão!",
     description: `
       Com R$250.000,00 de volta você vai morar na maravilhosa Estância de Atibaia. Chácara à venda em Atibaia, bairro Jundiazinho.
       <br/><br/>
@@ -73,7 +72,7 @@ const slugs = {
   },
   valeribeira: {
     id: 2,
-    title: "Oportunidade no Vale do Ribeira!",
+    name: "Oportunidade no Vale do Ribeira!",
     description: `
       Sempre eu digo às pessoas, terra é o bem mais precioso. O planeta não aumenta e a cada dia 1 alqueire vai valendo mais. Tem pessoas que recebem aluguéis fora do comum de áreas que não valiam nada e hoje rendem fortunas mensais.
       <br/><br/>
