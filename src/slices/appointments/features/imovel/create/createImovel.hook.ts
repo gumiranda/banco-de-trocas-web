@@ -21,6 +21,7 @@ export const useCreateImovel = () => {
       try {
         const { data } = await api.post("/imovel/add", {
           ...imovel,
+          cityLabel: imovel.city + " - " + imovel.uf,
         });
         if (!data) {
           showModal({
@@ -38,13 +39,13 @@ export const useCreateImovel = () => {
         showModal({
           content: t("PAGES:MESSAGES.successMessage", {
             domain: t("PAGES:HOME_PAGE.imovel", {
-              defaultValue: "Categoria",
+              defaultValue: "Imóvel",
             }),
             operation: t("PAGES:MESSAGES.create", {
-              defaultValue: "criada",
+              defaultValue: "criado",
             }),
             defaultValue:
-              "Categoria criada com sucesso, você será redirecionado para a lista de categorias",
+              "Imóvel criado com sucesso, você será redirecionado para a lista de imóvels",
           }),
           title: t("PAGES:MESSAGES.success", {
             defaultValue: "Sucesso",

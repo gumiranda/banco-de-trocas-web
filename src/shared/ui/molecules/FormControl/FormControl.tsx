@@ -5,6 +5,7 @@ import {
   FormControl as FormControlChakra,
   InputProps as ChakraInputProps,
   FormErrorMessage,
+  Textarea,
 } from "@chakra-ui/react";
 import { AutoComplete } from "./AutoComplete";
 import { Input, Checkbox } from "@/shared/ui";
@@ -21,7 +22,9 @@ interface InputProps extends ChakraInputProps {
   mask?: string;
   maskChar?: string | null;
   hide?: any;
+  textarea?: boolean; // New property for textarea support
 }
+
 const FormControlMolecules: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   props,
   ref
@@ -40,11 +43,14 @@ const FormControlMolecules: ForwardRefRenderFunction<HTMLInputElement, InputProp
     inputBgColor = "primary.500",
     type = "text",
     hide,
+    textarea, // Destructure textarea property
     ...rest
   } = props;
+
   if (hide) {
     return null;
   }
+
   const AutoCompleteInput = AutoComplete as (props: any) => any;
 
   return (
@@ -87,19 +93,30 @@ const FormControlMolecules: ForwardRefRenderFunction<HTMLInputElement, InputProp
     </FormControlChakra>
   );
 };
+
 const FormControlInputMask_ = (props, ref) => {
-  const { mask, hide, checkboxprops, ...other } = props;
+  const { mask, hide, checkboxprops, textarea, ...other } = props;
+
   if (hide) {
     return null;
   }
+
   if (mask) {
     return <DefaultInput mask={mask} {...other} ref={ref} as={InputMask} />;
   }
+
   if (checkboxprops) {
     return <Checkbox {...other} {...checkboxprops} ref={ref} />;
   }
+
+  if (textarea) {
+    // Handle textarea
+    return <DefaultInput {...other} ref={ref} as={Textarea} />;
+  }
+
   return <DefaultInput {...other} ref={ref} />;
 };
+
 const DefaultInput_ = (props, ref) => {
   const {
     name,
@@ -116,6 +133,7 @@ const DefaultInput_ = (props, ref) => {
     type = "text",
     ...rest
   } = props;
+
   return (
     <Input
       {...rest}
@@ -133,6 +151,7 @@ const DefaultInput_ = (props, ref) => {
     />
   );
 };
+
 export const DefaultInput = memo(forwardRef(DefaultInput_));
 export const FormControlInputMask = memo(forwardRef(FormControlInputMask_));
 export const FormControl = memo(forwardRef(FormControlMolecules));

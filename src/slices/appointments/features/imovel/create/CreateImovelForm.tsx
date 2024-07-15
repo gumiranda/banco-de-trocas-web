@@ -14,9 +14,24 @@ export const CreateImovelForm = () => {
     >
       <GridForm>
         <FormControl
-          label="Nome da imovel"
+          label="Título do imovel"
           error={formState.errors.name}
           {...register("name")}
+        />
+        <FormControl
+          label="Descrição do imovel"
+          error={formState.errors.description}
+          {...register("description")}
+        />
+        <FormControl
+          label="Cidade do imovel"
+          error={formState.errors.city}
+          {...register("city")}
+        />
+        <FormControl
+          label="Estado do imovel"
+          error={formState.errors.uf}
+          {...register("uf")}
         />
         <Checkbox
           label="Ativo"
