@@ -1,4 +1,4 @@
-import { Flex, GenericDetailsItem, Text, Button } from "@/shared/ui";
+import { Flex, GenericDetailsItem, Text, Button, GalleryHorizontal } from "@/shared/ui";
 import { Heading, Icon, Img } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { RiAddLine } from "react-icons/ri";
@@ -29,12 +29,22 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
           </Button>
         </NextLink>
       </Flex>
+      <GalleryHorizontal
+        photos={imovel?.photos?.map?.((item) => ({
+          id: item?._id,
+          src: item?.url,
+          alt: item?.name ?? "imagem do imóvel",
+        }))}
+      />
+      <Text mt={4} color="gray.50" lineHeight="tall" fontSize="xl" ta="left">
+        {ReactHtmlParser(imovel.description)}
+      </Text>
       <GenericDetailsItem
         item={imovel}
         fields={[
           {
             id: "name",
-            label: "Título",
+            label: "Imóvel",
           },
 
           {
@@ -46,15 +56,9 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
             label: t("PAGES:FIELDS.createdAt", {
               defaultValue: "Data de criação",
             }),
-          }, 
+          },
         ]}
       />
-        <Text mt={4} color="gray.50" lineHeight="tall" fontSize="xl" ta="left">
-            {ReactHtmlParser(imovel.description)}
-          </Text>
-      {imovel?.photos?.map?.((image, ix) => (
-        <Img key={ix} src={image?.url} alt="Imagem do Imóvel" borderRadius="md" mt={4} />
-      ))}
     </>
   );
 };

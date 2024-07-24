@@ -1,4 +1,5 @@
 // IMPORT MODULE FILES
+export * from "./GalleryHorizontal";
 export * from "./Features";
 export * from "./ViewField";
 export * from "./DateDetails";
