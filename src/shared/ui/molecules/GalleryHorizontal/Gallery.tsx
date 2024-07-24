@@ -5,7 +5,9 @@ import {
   Skeleton,
   Stack,
   StackProps,
+  IconButton,
   useBreakpointValue,
+  Box,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
@@ -34,14 +36,46 @@ export const Gallery = (props: GalleryProps) => {
 
   return (
     <Stack spacing="4" {...rootProps}>
-      <AspectRatio ratio={aspectRatio}>
-        <Image
-          src={images[index].src}
-          objectFit="cover"
-          alt={images[index].alt}
-          fallback={<Skeleton />}
+      <Box position="relative">
+        <IconButton
+          position="absolute"
+          left="2"
+          top="50%"
+          transform="translateY(-50%)"
+          onClick={() => {
+            if (index === 0) return;
+            slider.current?.prev();
+            setIndex((prev) => prev - 1);
+          }}
+          icon={<IoChevronBackOutline />}
+          aria-label="Previous slide"
+          disabled={currentSlide === 0}
+          zIndex={1}
         />
-      </AspectRatio>
+        <AspectRatio ratio={aspectRatio} position="relative">
+          <Image
+            src={images[index].src}
+            objectFit="cover"
+            alt={images[index].alt}
+            fallback={<Skeleton />}
+          />
+        </AspectRatio>
+        <IconButton
+          position="absolute"
+          right="2"
+          top="50%"
+          transform="translateY(-50%)"
+          onClick={() => {
+            if (index === images.length - 1) return;
+            slider.current?.next();
+            setIndex((prev) => prev + 1);
+          }}
+          icon={<IoChevronForwardOutline />}
+          aria-label="Next slide"
+          disabled={currentSlide + Number(slidesPerView) === images.length}
+          zIndex={1}
+        />
+      </Box>
       <HStack spacing="4">
         <CarouselIconButton
           onClick={() => slider.current?.prev()}
