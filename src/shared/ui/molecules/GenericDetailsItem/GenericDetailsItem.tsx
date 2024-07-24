@@ -33,13 +33,6 @@ export const GenericDetailsItem: React.FC<GenericDetailsItemProps> = ({
       boxShadow="lg"
       border="1px solid"
       borderColor="gray.300"
-      transition="all 0.3s"
-      _hover={{
-        boxShadow: "xl",
-        bg: "gray.200",
-        transform: "scale(1.05)",
-      }}
-      animation={`${fadeIn} 0.5s ease-in-out`}
       role="grid"
       aria-labelledby="grid-heading"
     >

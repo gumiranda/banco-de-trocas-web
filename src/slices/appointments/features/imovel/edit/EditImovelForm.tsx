@@ -1,7 +1,8 @@
 import { ImovelProps } from "@/slices/appointments/entidades/imovel";
 import { useEditImovel } from "./editImovel.hook";
-import { BoxCreateItem, FormControl, GenericDetailsItem, GridForm } from "@/shared/ui";
+import { BoxCreateItem, FormControl, GenericDetailsItem, GridForm ,Text} from "@/shared/ui";
 import { useTranslation } from "react-i18next";
+import ReactHtmlParser from "react-html-parser";
 
 export interface EditImovelFormProps {
   imovel: ImovelProps;
@@ -19,18 +20,14 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
       isLoadingSaveButton={formState.isSubmitting}
       cancelRoute={"/imovels/1"}
     >
-      <GenericDetailsItem
+        <GenericDetailsItem
         item={imovel}
         fields={[
-          { id: "_id", label: "Id" },
           {
             id: "name",
             label: "Título",
           },
-          {
-            id: "description",
-            label: "Descrição",
-          },
+
           {
             id: "cityLabel",
             label: "Localização",
@@ -40,9 +37,12 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
             label: t("PAGES:FIELDS.createdAt", {
               defaultValue: "Data de criação",
             }),
-          },
+          }, 
         ]}
       />
+        <Text mt={4} color="gray.50" lineHeight="tall" fontSize="xl" ta="left">
+            {ReactHtmlParser(imovel.description)}
+          </Text>
       <GridForm>
         <FormControl
           label="Título do imovel"

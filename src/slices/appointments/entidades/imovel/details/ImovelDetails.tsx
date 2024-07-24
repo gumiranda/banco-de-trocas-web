@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import { RiAddLine } from "react-icons/ri";
 import { ImovelProps } from "../imovel.model";
 import { useTranslation } from "react-i18next";
+import ReactHtmlParser from "react-html-parser";
 
 type ImovelDetailsProps = {
   imovel: ImovelProps;
@@ -45,13 +46,12 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
             label: t("PAGES:FIELDS.createdAt", {
               defaultValue: "Data de criação",
             }),
-          },
-          {
-            id: "description",
-            label: "Descrição",
-          },
+          }, 
         ]}
       />
+        <Text mt={4} color="gray.50" lineHeight="tall" fontSize="xl" ta="left">
+            {ReactHtmlParser(imovel.description)}
+          </Text>
       {imovel?.photos?.map?.((image, ix) => (
         <Img key={ix} src={image?.url} alt="Imagem do Imóvel" borderRadius="md" mt={4} />
       ))}
