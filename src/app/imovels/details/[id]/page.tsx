@@ -15,9 +15,7 @@ export const metadata: Metadata = {
 async function getData(id) {
   const allCookies = getCookies();
   const parsedCookies = parseCookies(allCookies);
-  if (!parsedCookies?.["belezixadmin.token"]) {
-    return null;
-  }
+
   const res = await getImovelById(id, parsedCookies);
   if (!res) {
     return null;
@@ -27,7 +25,7 @@ async function getData(id) {
 export default async function Page({ params: { id } }: { params: { id: string } }) {
   const data = await getData(id);
   if (!data) {
-    redirect("/login");
+    redirect("/");
   }
   return <ImovelDetailsPage data={data} id={id} />;
 }
