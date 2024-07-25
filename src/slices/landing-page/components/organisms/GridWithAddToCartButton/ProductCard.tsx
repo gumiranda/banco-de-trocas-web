@@ -68,6 +68,7 @@ export const ProductCard = (props: Props) => {
           lineHeight="none"
           mb={4}
           as="p"
+          noOfLines={2}
         >
           {name}
         </Text>
