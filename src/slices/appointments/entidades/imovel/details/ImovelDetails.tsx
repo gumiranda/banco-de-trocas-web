@@ -18,7 +18,7 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
         <Heading size="lg" fontWeight={"normal"}>
           Imóvel {imovel?.name}
         </Heading>
-        <NextLink passHref href={`/imovels/edit/${imovel?._id}`}>
+        {/* <NextLink passHref href={`/imovels/edit/${imovel?._id}`}>
           <Button
             size="sm"
             fontSize={"sm"}
@@ -27,7 +27,7 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
           >
             Editar
           </Button>
-        </NextLink>
+        </NextLink> */}
       </Flex>
       <GalleryHorizontal
         photos={imovel?.photos?.map?.((item) => ({

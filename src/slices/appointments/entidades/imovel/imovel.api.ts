@@ -12,7 +12,7 @@ export const getImovels = async (
   ctx: any,
   params: any = {}
 ): Promise<GetImovelsResponse> => {
-  const { data } = await setupAPIClient(ctx).get("/imovel/loadByPage", {
+  const { data } = await setupAPIClient(ctx).get("/publicimovel/loadByPage", {
     params: { page, sortBy: "createdAt", typeSort: "desc", ...params },
   });
   const { imovels, total } = data || {};

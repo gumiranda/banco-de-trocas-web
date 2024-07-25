@@ -1,6 +1,7 @@
 import { Flex, Heading, Button, keyframes, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { getWhatsappLink } from "@/slices/landing-page/utils";
+import { Link } from "@chakra-ui/next-js";
 
 // Definição de keyframes para animações
 const fadeIn = keyframes`
@@ -34,20 +35,22 @@ export const Header = () => (
     transition="all 0.3s ease"
     {...animationProps}
   >
-    <Text
-      textAlign={"center"}
-      fontWeight="bold"
-      letterSpacing="tight"
-      mt={1}
-      as="h1"
-      lineHeight={0.8}
-      fontSize={["2xl", "3xl"]}
-    >
-      Banco de
-      <Text color="tertiary.500" marginLeft="2" as="span">
-        trocas
+    <Link href="/">
+      <Text
+        textAlign={"center"}
+        fontWeight="bold"
+        letterSpacing="tight"
+        mt={1}
+        as="h1"
+        lineHeight={0.8}
+        fontSize={["2xl", "3xl"]}
+      >
+        Banco de
+        <Text color="tertiary.500" marginLeft="2" as="span">
+          trocas
+        </Text>
       </Text>
-    </Text>
+    </Link>
     <NextLink href={getWhatsappLink("Olá, gostaria de anunciar um imóvel.")}>
       <Button
         colorScheme="orange"

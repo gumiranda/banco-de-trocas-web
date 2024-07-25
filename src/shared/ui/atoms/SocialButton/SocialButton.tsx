@@ -1,18 +1,11 @@
 import { chakra, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-export const SocialButton = ({
-  children,
-  label,
-  href,
-}: {
-  children: ReactNode;
-  label: string;
-  href: string;
-}) => {
+export const SocialButton = ({ children, label, href, ...rest }: any) => {
   return (
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+      {...rest}
       rounded={"full"}
       w={12}
       h={12}
