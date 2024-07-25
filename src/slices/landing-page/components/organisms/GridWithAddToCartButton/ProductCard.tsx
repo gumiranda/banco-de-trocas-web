@@ -59,33 +59,32 @@ export const ProductCard = (props: Props) => {
         </SocialButton>
       </Box>
       <Stack>
-        <Stack spacing="1">
-          <Text
-            color={"gray.50"}
-            fontSize={{ base: "xl", md: "2xl" }}
-            fontWeight="bold"
-            fontFamily={fonts.inter.style.fontFamily}
-            letterSpacing="tighter"
-            lineHeight="none"
-            mb={4}
-          >
-            {name}
-          </Text>
-          <Text
-            color={"gray.300"}
-            fontSize={{ base: "md", md: "lg" }}
-            fontWeight="normal"
-            fontFamily={fonts.inter.style.fontFamily}
-            letterSpacing="tighter"
-            lineHeight="none"
-            mb={4}
-          >
-            {ReactHtmlParser(product?.description?.substring?.(0, 120) + "...")}
-          </Text>
-          {price && salePrice && (
-            <PriceTag price={price} salePrice={salePrice} currency="BRL" />
-          )}
-        </Stack>
+        <Text
+          color={"gray.50"}
+          fontSize={{ base: "xl", md: "2xl" }}
+          fontWeight="bold"
+          fontFamily={fonts.inter.style.fontFamily}
+          letterSpacing="tighter"
+          lineHeight="none"
+          mb={4}
+          as="p"
+        >
+          {name}
+        </Text>
+        <Box
+          color={"gray.300"}
+          fontSize={{ base: "md", md: "lg" }}
+          fontWeight="normal"
+          fontFamily={fonts.inter.style.fontFamily}
+          letterSpacing="tighter"
+          lineHeight="none"
+          mb={4}
+        >
+          {ReactHtmlParser(product?.description?.substring?.(0, 120) + "...")}
+        </Box>
+        {price && salePrice && (
+          <PriceTag price={price} salePrice={salePrice} currency="BRL" />
+        )}
         {rating && (
           <HStack>
             <Rating defaultValue={rating} size="sm" />

@@ -1,4 +1,11 @@
-import { Flex, GenericDetailsItem, Text, Button, GalleryHorizontal } from "@/shared/ui";
+import {
+  Flex,
+  GenericDetailsItem,
+  Text,
+  Button,
+  GalleryHorizontal,
+  Box,
+} from "@/shared/ui";
 import { Heading, Icon, Img } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { RiAddLine } from "react-icons/ri";
@@ -36,9 +43,9 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
           alt: item?.name ?? "imagem do imóvel",
         }))}
       />
-      <Text mt={4} color="gray.50" lineHeight="tall" fontSize="xl" ta="left">
+      <Box mt={4} color="gray.50" lineHeight="tall" fontSize="xl" ta="left">
         {ReactHtmlParser(imovel.description)}
-      </Text>
+      </Box>
       <GenericDetailsItem
         item={imovel}
         fields={[

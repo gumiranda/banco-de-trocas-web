@@ -16,7 +16,6 @@ export const GridWithAddToCartButton = ({ data }) => {
       py={{ base: "6", md: "8", lg: "12" }}
     >
       <Text
-        as="h1"
         fontSize={{ base: "4xl", md: "5xl" }}
         fontWeight="normal"
         fontFamily={fonts.inter.style.fontFamily}

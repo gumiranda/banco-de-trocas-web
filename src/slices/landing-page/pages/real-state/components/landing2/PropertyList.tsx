@@ -1,4 +1,4 @@
-import { Img } from "@/shared/ui";
+import { Box, Img } from "@/shared/ui";
 import { Flex, Container, Heading, Stack, Text } from "@chakra-ui/react";
 import ReactHtmlParser from "react-html-parser";
 
@@ -25,9 +25,9 @@ export const PropertyList = ({
           <Heading fontSize="xl" color="gray.800" letterSpacing="tight">
             {property.name}
           </Heading>
-          <Text mt={4} color="gray.800" lineHeight="tall" fontSize="xl">
+          <Box mt={4} color="gray.800" lineHeight="tall" fontSize="xl">
             {ReactHtmlParser(property.description)}
-          </Text>
+          </Box>
           {property?.images?.map?.((image, ix) => (
             <Img key={ix} src={image} alt="Imagem do Imóvel" borderRadius="md" mt={4} />
           ))}
