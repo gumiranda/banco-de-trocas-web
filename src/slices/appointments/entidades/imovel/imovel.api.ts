@@ -47,7 +47,7 @@ export const getImovelById = async (
   ctx: any
 ): Promise<ImovelProps | null> => {
   try {
-    const { data } = await setupAPIClient(ctx).get("/imovel/load", {
+    const { data } = await setupAPIClient(ctx).get("/publicimovel/load", {
       params: { _id: id },
     });
     if (!data) {
