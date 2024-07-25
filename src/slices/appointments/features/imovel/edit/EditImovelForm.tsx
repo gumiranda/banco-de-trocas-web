@@ -3,6 +3,7 @@ import { useEditImovel } from "./editImovel.hook";
 import {
   Box,
   BoxCreateItem,
+  Checkbox,
   FormControl,
   GenericDetailsItem,
   GridForm,
@@ -10,16 +11,18 @@ import {
 } from "@/shared/ui";
 import { useTranslation } from "react-i18next";
 import ReactHtmlParser from "react-html-parser";
+import { useAuth } from "@/shared/libs";
 
 export interface EditImovelFormProps {
   imovel: ImovelProps;
 }
 export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
   const { t } = useTranslation("PAGES");
-
-  const { formState, register, handleSubmit, handleEditImovel } = useEditImovel({
-    imovel,
-  });
+  const { user = null } = useAuth() || {};
+  const { formState, register, handleSubmit, handleEditImovel, active, setActive } =
+    useEditImovel({
+      imovel,
+    });
   return (
     <BoxCreateItem
       onSubmit={handleSubmit(handleEditImovel)}
@@ -86,6 +89,17 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
           error={formState.errors.salePrice}
           {...register("salePrice")}
         />
+        {user?.role === "admin" && (
+          <Checkbox
+            label="Ativo"
+            colorScheme="green"
+            isChecked={active}
+            onChange={(e) => {
+              e.preventDefault();
+              setActive(e.target.checked);
+            }}
+          />
+        )}
       </GridForm>
     </BoxCreateItem>
   );

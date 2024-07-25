@@ -10,11 +10,14 @@ import { useRouter } from "next/navigation";
 import { api } from "@/shared/api";
 import { useMutation } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 export const useEditImovel = (props: EditImovelFormProps) => {
   const { t } = useTranslation(["PAGES"]);
   const { showModal } = useUi();
   const { imovel: currentImovel } = props;
+  const [active, setActive] = useState(false);
+
   const router = useRouter();
   const editImovel = useMutation({
     mutationFn: async (imovel: EditImovelFormData) => {
@@ -72,7 +75,7 @@ export const useEditImovel = (props: EditImovelFormProps) => {
   const handleEditImovel: SubmitEditImovelHandler = async (
     values: EditImovelFormData
   ) => {
-    await editImovel.mutateAsync(values);
+    await editImovel.mutateAsync({ ...values, active });
   };
-  return { formState, register, handleSubmit, handleEditImovel };
+  return { formState, register, handleSubmit, handleEditImovel, active, setActive };
 };

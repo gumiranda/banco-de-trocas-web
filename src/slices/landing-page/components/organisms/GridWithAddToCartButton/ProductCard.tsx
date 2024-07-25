@@ -79,6 +79,7 @@ export const ProductCard = (props: Props) => {
           letterSpacing="tighter"
           lineHeight="none"
           mb={4}
+          noOfLines={3}
         >
           {ReactHtmlParser(product?.description?.substring?.(0, 120) + "...")}
         </Box>

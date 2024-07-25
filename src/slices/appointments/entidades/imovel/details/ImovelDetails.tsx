@@ -12,6 +12,7 @@ import { RiAddLine } from "react-icons/ri";
 import { ImovelProps } from "../imovel.model";
 import { useTranslation } from "react-i18next";
 import ReactHtmlParser from "react-html-parser";
+import { useAuth } from "@/shared/libs";
 
 type ImovelDetailsProps = {
   imovel: ImovelProps;
@@ -19,22 +20,26 @@ type ImovelDetailsProps = {
 
 export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
   const { t } = useTranslation("PAGES");
+  const { user = null } = useAuth() || {};
+
   return (
     <>
       <Flex mb="8" justify="space-between" align="center">
         <Heading size="lg" fontWeight={"normal"}>
           Imóvel {imovel?.name}
         </Heading>
-        {/* <NextLink passHref href={`/imovels/edit/${imovel?._id}`}>
-          <Button
-            size="sm"
-            fontSize={"sm"}
-            colorScheme="green"
-            leftIcon={<Icon fontSize="20" as={RiAddLine} />}
-          >
-            Editar
-          </Button>
-        </NextLink> */}
+        {(user?.role === "admin" || user?._id === imovel?.createdById) && (
+          <NextLink passHref href={`/imovels/edit/${imovel?._id}`}>
+            <Button
+              size="sm"
+              fontSize={"sm"}
+              colorScheme="green"
+              leftIcon={<Icon fontSize="20" as={RiAddLine} />}
+            >
+              Editar
+            </Button>
+          </NextLink>
+        )}
       </Flex>
       <GalleryHorizontal
         photos={imovel?.photos?.map?.((item) => ({

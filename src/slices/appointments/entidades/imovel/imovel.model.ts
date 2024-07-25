@@ -12,6 +12,7 @@ export type ImovelProps = {
   active?: boolean;
   price?: number;
   salePrice?: number;
+  createdById?: string;
 };
 
 class Imovel {
@@ -57,6 +58,9 @@ class Imovel {
   }
   get salePrice(): number | undefined {
     return this.props.salePrice;
+  }
+  get createdById(): string | undefined {
+    return this.props.createdById;
   }
 
   format(): ImovelProps {
