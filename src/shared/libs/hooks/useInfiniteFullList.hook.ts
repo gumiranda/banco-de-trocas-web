@@ -5,7 +5,7 @@ export const useInfiniteFullList = ({ fetchNextPage, hasNextPage, isFetching }) 
   const { user = null } = useAuth() || {};
   const { setLoading } = useUi() || {};
   useEffect(() => {
-    if (user?.role === "owner" && hasNextPage === true && !isFetching) {
+    if (user?.role !== "client" && hasNextPage === true && !isFetching) {
       fetchNextPage();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

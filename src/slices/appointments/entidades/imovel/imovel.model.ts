@@ -10,6 +10,8 @@ export type ImovelProps = {
   createdAt: string;
   value?: boolean;
   active?: boolean;
+  price?: number;
+  salePrice?: number;
 };
 
 class Imovel {
@@ -49,6 +51,12 @@ class Imovel {
   }
   get photos(): any {
     return this.props.photos;
+  }
+  get price(): number | undefined {
+    return this.props.price;
+  }
+  get salePrice(): number | undefined {
+    return this.props.salePrice;
   }
 
   format(): ImovelProps {

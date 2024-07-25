@@ -53,14 +53,14 @@ export const CreateServiceForm = ({ categoryList }: CreateServiceFormProps) => {
           {...register("description")}
         />
         <FormControl
-          label={t("PAGES:FIELDS.price", {
+          label={t("PAGES:FIELDS.priceImovel", {
             defaultValue: "Preço promocional",
           })}
           error={formState.errors.price}
           {...register("price")}
         />
         <FormControl
-          label={t("PAGES:FIELDS.finalPrice", {
+          label={t("PAGES:FIELDS.salePrice", {
             defaultValue: "Preço do serviço",
           })}
           error={formState.errors.finalPrice}

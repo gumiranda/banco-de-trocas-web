@@ -3,8 +3,11 @@ import { useCreateImovel } from "./createImovel.hook";
 import { BoxCreateItem, FormControl, Checkbox, GridForm } from "@/shared/ui";
 import { PhotoUpload } from "../PhotoUpload";
 import { Heading } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 export const CreateImovelForm = () => {
+  const { t } = useTranslation(["PAGES"]);
+
   const {
     formState,
     register,
@@ -53,6 +56,20 @@ export const CreateImovelForm = () => {
               label="Estado do imovel"
               error={formState.errors.uf}
               {...register("uf")}
+            />
+            <FormControl
+              label={t("PAGES:FIELDS.price", {
+                defaultValue: "Valor do imóvel",
+              })}
+              error={formState.errors.price}
+              {...register("price")}
+            />
+            <FormControl
+              label={t("PAGES:FIELDS.finalPrice", {
+                defaultValue: "Preço negociável",
+              })}
+              error={formState.errors.salePrice}
+              {...register("salePrice")}
             />
             <Checkbox
               label="Ativo"

@@ -188,9 +188,7 @@ export const ImoveisPage = ({ data }) => (
     <Header />
 
     <GridWithAddToCartButton data={data} />
-    <SplitWithImage />
     <Sobre />
-    <About />
     <FAQ faqs={faqs} />
     <SmallWithSocial />
   </Box>

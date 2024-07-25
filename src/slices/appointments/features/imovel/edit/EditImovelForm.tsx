@@ -72,6 +72,20 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
           error={formState.errors.uf}
           {...register("uf")}
         />
+        <FormControl
+          label={t("PAGES:FIELDS.price", {
+            defaultValue: "Valor do imóvel",
+          })}
+          error={formState.errors.price}
+          {...register("price")}
+        />
+        <FormControl
+          label={t("PAGES:FIELDS.finalPrice", {
+            defaultValue: "Preço negociável",
+          })}
+          error={formState.errors.salePrice}
+          {...register("salePrice")}
+        />
       </GridForm>
     </BoxCreateItem>
   );

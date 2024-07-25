@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 async function getData(pageNumber) {
   const allCookies = getCookies();
   if (!allCookies) return null;
-  const res = await getImovels(pageNumber, parseCookies(allCookies), {});
+  const res = await getImovels(pageNumber, parseCookies(allCookies), { active: true });
   if (!res) {
     throw new Error("Erro ao buscar dados");
   }
