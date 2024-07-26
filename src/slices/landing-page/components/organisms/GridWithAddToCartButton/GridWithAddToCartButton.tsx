@@ -1,8 +1,35 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
 import { ProductGrid } from "./ProductGrid";
 import { fonts } from "@/app/fonts";
-
+import { Link } from "@chakra-ui/next-js";
+import { Button } from "@/shared/ui";
+export const SeeMoreButton = () => {
+  return (
+    <Flex>
+      <Link
+        size="lg"
+        w={"100%"}
+        fontFamily={fonts.inter.style.fontFamily}
+        href={"/maisimoveis"}
+        textAlign={"center"}
+      >
+        <Button
+          size="lg"
+          color="white"
+          px="0"
+          colorScheme="green"
+          fontWeight={"bold"}
+          fontSize="md"
+          w={"50%"}
+          my={10}
+        >
+          Ver mais imóveis
+        </Button>
+      </Link>
+    </Flex>
+  );
+};
 export const GridWithAddToCartButton = ({ data }) => {
   const imoveis = data?.imovels ?? [];
   if (imoveis?.length === 0) {
