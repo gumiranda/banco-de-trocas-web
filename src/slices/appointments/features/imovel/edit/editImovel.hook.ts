@@ -16,7 +16,7 @@ export const useEditImovel = (props: EditImovelFormProps) => {
   const { t } = useTranslation(["PAGES"]);
   const { showModal } = useUi();
   const { imovel: currentImovel } = props;
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
 
   const router = useRouter();
   const editImovel = useMutation({
