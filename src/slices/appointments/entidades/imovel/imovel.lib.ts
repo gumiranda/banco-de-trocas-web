@@ -18,11 +18,14 @@ export const useGetImovels = (
   } as any);
 };
 export const useGetInfiniteImovels = (
-  options: Omit<UseInfiniteQueryOptions, "queryKey">
+  options: Omit<UseInfiniteQueryOptions, "queryKey">,
+  params?: any
 ) => {
   return useInfiniteQuery({
-    queryKey: ["imovelsInfinite"],
-    queryFn: ({ pageParam = 1 }: any) => getInfiniteImovels(pageParam),
+    queryKey: ["imovelsInfinite", params],
+    queryFn: ({ pageParam = 1, queryKey }) => {
+      return getInfiniteImovels(pageParam, queryKey?.[1]);
+    },
     ...options,
   });
 };

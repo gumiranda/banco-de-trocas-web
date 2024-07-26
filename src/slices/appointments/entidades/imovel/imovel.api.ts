@@ -36,11 +36,11 @@ type InfiniteProps = {
   pageParam: number;
   ctx: any;
 };
-export const getInfiniteImovels = async ({
-  pageParam = 1,
-  ctx,
-}: InfiniteProps): Promise<GetImovelsResponse> => {
-  return getImovels(pageParam, ctx);
+export const getInfiniteImovels = async (
+  page,
+  params: any
+): Promise<GetImovelsResponse> => {
+  return getImovels(page, null, params);
 };
 export const getImovelById = async (
   id: string,

@@ -19,8 +19,9 @@ export const useImovelInfiniteList = () => {
   const [status, setStatus] = useState<any>(null);
 
   const query = {
-    initDate: startOfDay(new Date(selectedDate)),
-    endDate: endOfDay(new Date(endDate)),
+    active: true,
+    // initDate: startOfDay(new Date(selectedDate)),
+    // endDate: endOfDay(new Date(endDate)),
   };
 
   const all = useGetInfiniteImovels(
@@ -29,7 +30,7 @@ export const useImovelInfiniteList = () => {
       getPreviousPageParam: (lastPage: any) => lastPage.prev,
       initialPageParam: 1, // or provide a suitable initial value
     },
-    { ...query, status: !isNaN(Number(status)) ? status : null }
+    { ...query }
   );
   useEffect(() => {
     queryClient.invalidateQueries({ queryKey: ["imovelsInfinite", query] });
@@ -42,7 +43,7 @@ export const useImovelInfiniteList = () => {
   useEffect(() => {
     if ([403, 401, 500].includes(error?.response?.status)) {
       logout?.();
-      router.push("/login");
+      router.push("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error?.response?.status]);
