@@ -111,7 +111,7 @@ export const PhotoUpload = ({ setPhotos }) => {
           itemPreview: (id) => `file-upload-item-preview-${id}`,
         }}
         locale="pt-BR"
-        maxFiles={30}
+        maxFiles={99}
         maxFileSize={5000000}
         minFileSize={512}
         name="uploadedFiles"
