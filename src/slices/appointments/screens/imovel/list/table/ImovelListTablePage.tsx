@@ -44,6 +44,20 @@ export const ImovelListTablePage = ({ page = 0, data }: ImovelListTablePageProps
               displayKeyText: true,
             },
             {
+              id: "cityLabel",
+              label: t("PAGES:FIELDS.location", {
+                defaultValue: "Localização",
+              }),
+              displayKeyText: true,
+            },
+            {
+              id: "salePrice",
+              label: t("PAGES:FIELDS.salePrice", {
+                defaultValue: "Valor de venda",
+              }),
+              displayKeyText: true,
+            },
+            {
               id: "createdAt",
               label: t("PAGES:FIELDS.createdAt", {
                 defaultValue: "Data de criação",
