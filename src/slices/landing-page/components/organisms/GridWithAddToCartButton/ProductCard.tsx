@@ -100,8 +100,8 @@ export const ProductCard = (props: Props) => {
         <Link
           size="lg"
           w={"100%"}
+          href={`/imovels/details/${_id}`}
           fontFamily={fonts.inter.style.fontFamily}
-          href={getWhatsappLink(`Olá, tenho interesse no imóvel ${name}.`)}
         >
           <Button
             size="lg"
@@ -113,16 +113,16 @@ export const ProductCard = (props: Props) => {
             fontSize="md"
             w={"100%"}
           >
-            Tenho interesse
+            Ver detalhes
           </Button>
         </Link>
         <Link
           textDecoration="underline"
           fontWeight="medium"
           color={"gray.100"}
-          href={`/imovels/details/${_id}`}
+          href={getWhatsappLink(`Olá, tenho interesse no imóvel ${name}.`)}
         >
-          Ver detalhes
+          Tenho interesse
         </Link>
       </Stack>
     </Stack>
