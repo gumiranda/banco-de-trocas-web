@@ -38,15 +38,15 @@ export const ImovelListTablePage = ({ page = 0, data }: ImovelListTablePageProps
           fields={[
             {
               id: "name",
-              label: t("PAGES:FIELDS.name", {
-                defaultValue: "Nome",
+              label: t("PAGES:FIELDS.title", {
+                defaultValue: "Título do anúncio",
               }),
               displayKeyText: true,
             },
             {
               id: "cityLabel",
               label: t("PAGES:FIELDS.location", {
-                defaultValue: "Localização",
+                defaultValue: "Localização do imóvel",
               }),
               displayKeyText: true,
             },
