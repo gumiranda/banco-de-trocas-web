@@ -100,6 +100,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         email,
         password,
         passwordConfirmation: password,
+        tenantSlug: "bancodetrocas",
       });
       const {
         accessToken: token,
@@ -165,6 +166,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         role: "owner",
         cpf: cnpjActive ? null : cpf,
         cnpj: cnpjActive ? cnpj : null,
+        tenantSlug: "bancodetrocas",
       });
       const {
         accessToken: token,

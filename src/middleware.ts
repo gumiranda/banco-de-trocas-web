@@ -72,7 +72,7 @@ export default async function middleware(request: NextRequest) {
       return response;
     }
 
-    const daysToNextCharge = calculateDaysToNextPayment(data.payDay);
+    const daysToNextCharge = 30; //calculateDaysToNextPayment(data.payDay);
     if (daysToNextCharge < 0) {
       return NextResponse.redirect(`${baseUrl}/payment/pix`);
     }

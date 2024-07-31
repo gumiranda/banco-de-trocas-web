@@ -12,6 +12,7 @@ export type UserProps = {
   serviceIds?: string[];
   daysSinceRegister?: number;
   phone?: string;
+  tenantSlug?: string;
 };
 
 class User {
@@ -60,6 +61,9 @@ class User {
   }
   get phone(): string | undefined {
     return this.props.phone;
+  }
+  get tenantSlug(): string | undefined {
+    return this.props.tenantSlug;
   }
   format(): UserProps {
     return {
