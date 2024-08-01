@@ -1,10 +1,10 @@
 "use client";
-import { Get{{pascalCase name}}sResponse } from "@/slices/appointments/entidades/{{camelcase name}}/{{camelcase name}}.api";
+import { Get{{pascalCase name}}sResponse } from "@/slices/appointments/entidades/{{camelCase name}}/{{camelCase name}}.api";
 import { useState, useEffect } from "react";
 import { useUi } from "@/shared/libs";
 import { api, queryClientInstance } from "@/shared/api";
 import { useMutation } from "@tanstack/react-query";
-import { {{pascalCase name}}Props } from "@/slices/appointments/entidades/{{camelcase name}}";
+import { {{pascalCase name}}Props } from "@/slices/appointments/entidades/{{camelCase name}}";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 type {{pascalCase name}}ListHook = {
@@ -17,13 +17,13 @@ export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) =>
   const router = useRouter();
   const { showModal } = useUi();
   const [page, setPage] = useState(data.page);
-  const [{{camelcase name}}s, set{{pascalCase name}}s] = useState(data?.initialData?.{{camelcase name}}s ?? []);
-  const handlePrefetch{{pascalCase name}} = async ({ _id: {{camelcase name}}Id }: any) => {
+  const [{{camelCase name}}s, set{{pascalCase name}}s] = useState(data?.initialData?.{{camelCase name}}s ?? []);
+  const handlePrefetch{{pascalCase name}} = async ({ _id: {{camelCase name}}Id }: any) => {
     // await queryClientInstance.prefetchQuery(
-    //   ["{{camelcase name}}", {{camelcase name}}Id],
+    //   ["{{camelCase name}}", {{camelCase name}}Id],
     //   async () => {
     //     const { data = null } =
-    //       (await api.get(`/{{camelcase name}}/load?_id=${ {{camelcase name}}Id}`)) || {};
+    //       (await api.get(`/{{camelCase name}}/load?_id=${ {{camelCase name}}Id}`)) || {};
     //     return data;
     //   },
     //   { staleTime: 1000 * 60 * 10 },
@@ -31,8 +31,8 @@ export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) =>
   };
   const delete{{pascalCase name}} = useMutation({
     onSuccess: () => {
-      queryClientInstance.invalidateQueries(["{{camelcase name}}s", data.page] as any);
-      queryClientInstance.refetchQueries(["{{camelcase name}}s", data.page] as any);
+      queryClientInstance.invalidateQueries(["{{camelCase name}}s", data.page] as any);
+      queryClientInstance.refetchQueries(["{{camelCase name}}s", data.page] as any);
       router.refresh();
     },
     onError: () => {
@@ -48,12 +48,12 @@ export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) =>
       });
     },
     retry: 3,
-    mutationFn: (async ({{camelcase name}}sToDelete: any = []) => {
+    mutationFn: (async ({{camelCase name}}sToDelete: any = []) => {
       try {
-        if ({{camelcase name}}sToDelete?.length > 0) {
+        if ({{camelCase name}}sToDelete?.length > 0) {
           return Promise.all(
-            {{camelcase name}}sToDelete?.map?.(({{camelcase name}}: any) =>
-              api.delete(`/{{camelcase name}}/delete?_id=${ {{camelcase name}}._id}`)
+            {{camelCase name}}sToDelete?.map?.(({{camelCase name}}: any) =>
+              api.delete(`/{{camelCase name}}/delete?_id=${ {{camelCase name}}._id}`)
             )
           );
         }
@@ -74,17 +74,17 @@ export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) =>
   });
   const deleteSelectedAction = async () => {
     delete{{pascalCase name}}.mutateAsync(
-      {{camelcase name}}s.filter(({{camelcase name}}: {{pascalCase name}}Props) => {{camelcase name}}.value) as any
+      {{camelCase name}}s.filter(({{camelCase name}}: {{pascalCase name}}Props) => {{camelCase name}}.value) as any
     );
   };
   const changePage = (newpage: number) => {
-    router.replace(`/{{camelcase name}}s/${newpage}`);
+    router.replace(`/{{camelCase name}}s/${newpage}`);
   };
   useEffect(() => {
-    set{{pascalCase name}}s(data?.initialData?.{{camelcase name}}s ?? []);
-  }, [data?.initialData?.{{camelcase name}}s]);
+    set{{pascalCase name}}s(data?.initialData?.{{camelCase name}}s ?? []);
+  }, [data?.initialData?.{{camelCase name}}s]);
   return {
-    {{camelcase name}}s,
+    {{camelCase name}}s,
     set{{pascalCase name}}s,
     handlePrefetch{{pascalCase name}},
     deleteSelectedAction,
