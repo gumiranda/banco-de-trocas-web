@@ -36,7 +36,7 @@ export const use{{pascalCase name}}InfiniteList = () => {
         if ({{camelCase name}}sToDelete?.length > 0) {
           return Promise.all(
             {{camelCase name}}sToDelete?.map?.(({{camelCase name}}: any) =>
-              api.delete(`/{{camelCase name}}/delete?_id=${{{camelCase name}}._id}`)
+              api.delete(`/{{camelCase name}}/delete?_id=${ {{camelCase name}}._id}`)
             )
           );
         }

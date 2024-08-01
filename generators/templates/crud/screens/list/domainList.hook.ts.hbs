@@ -53,7 +53,7 @@ export const use{{pascalCase name}}List = (data: {{pascalCase name}}ListHook) =>
         if ({{camelcase name}}sToDelete?.length > 0) {
           return Promise.all(
             {{camelcase name}}sToDelete?.map?.(({{camelcase name}}: any) =>
-              api.delete(`/{{camelcase name}}/delete?_id=${{{camelcase name}}._id}`)
+              api.delete(`/{{camelcase name}}/delete?_id=${ {{camelcase name}}._id}`)
             )
           );
         }
