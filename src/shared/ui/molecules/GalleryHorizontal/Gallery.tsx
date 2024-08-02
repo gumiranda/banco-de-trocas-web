@@ -21,7 +21,7 @@ interface GalleryProps {
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const { images, aspectRatio = 4 / 3, rootProps } = props;
+  const { images, aspectRatio = 1 / 1, rootProps } = props;
   const [index, setIndex] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesPerView = useBreakpointValue({ base: 3, md: 5 });
@@ -55,7 +55,7 @@ export const Gallery = (props: GalleryProps) => {
         <AspectRatio ratio={aspectRatio} position="relative">
           <Image
             src={images[index].src}
-            objectFit="cover"
+            objectFit="contain"
             alt={images[index].alt}
             fallback={<Skeleton />}
           />
