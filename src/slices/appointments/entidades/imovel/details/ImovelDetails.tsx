@@ -64,7 +64,7 @@ export const ImovelDetails = ({ imovel }: ImovelDetailsProps) => {
           size="lg"
           w={"100%"}
           fontFamily={fonts.inter.style.fontFamily}
-          href={getWhatsappLink(`Olá, tenho interesse no imóvel ${name}.`)}
+          href={getWhatsappLink(`Olá, tenho interesse no imóvel ${imovel?.name}.`)}
         >
           <Button
             size="lg"
